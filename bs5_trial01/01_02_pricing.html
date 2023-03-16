@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700,700i|Source+Sans+Pro" rel="stylesheet"><link href="https://fonts.googleapis.com/css?family=Lora|Roboto:400,700" rel="stylesheet">
+    <title>setapp pricing - layout trial</title>
+    <style>
+      logo__symbol {
+        width: 20px;
+        height: 32px;
+      }
+      logo__caption {
+        width: 70px;
+        height: 14px;
+        margin-left: 8px;
+      }
+      .roboto {
+      Font-Family: 'Roboto', Sans-Serif;
+      Font-Size: 48px;
+      font-weight: bold;
+      }
+      .lora {
+      Font-Family: 'Lora', Serif;
+      Font-Size: 14px;
+      }
+      .box {
+        height: 70%;
+      }
+    </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg bg-light bg-gradient">
+    <div class="container-fluid">
+      <!-- <a class="navbar-brand text-light" href="#">Navbar</a> -->
+      <svg class="logo__symbol" xmlns="http://www.w3.org/2000/svg" width="20" height="32" viewBox="0 0 19 30">
+        <path fill-rule="evenodd" d="M10.773 9.967a.759.759 0 0 1 0-1.072l3.397-3.398a.759.759 0 0 1 1.074 0l3.396 3.398a.758.758 0 0 1 0 1.072l-3.396 3.398a.759.759 0 0 1-1.074 0l-3.397-3.398zM8.895 8.09L5.498 4.693a.757.757 0 0 1 0-1.074L8.895.222a.759.759 0 0 1 1.073 0l3.398 3.397a.759.759 0 0 1 0 1.074L9.968 8.09a.759.759 0 0 1-1.073 0zm0 2.683a.759.759 0 0 1 1.073 0l3.398 3.397a.759.759 0 0 1 0 1.074L9.968 18.64a.758.758 0 0 1-1.073 0l-3.397-3.396a.757.757 0 0 1 0-1.074l3.397-3.397zM3.62 13.365L.223 9.968a.759.759 0 0 1 0-1.074L3.62 5.498a.758.758 0 0 1 1.073 0L8.09 8.894a.76.76 0 0 1 0 1.074l-3.398 3.397a.759.759 0 0 1-1.073 0zm11.624 2.683l3.396 3.397a.757.757 0 0 1 0 1.073l-3.396 3.398a.759.759 0 0 1-1.073 0l-3.398-3.398a.76.76 0 0 1 0-1.073l3.398-3.397a.759.759 0 0 1 1.073 0zm-5.276 5.275l3.397 3.397a.757.757 0 0 1 0 1.074L9.968 29.19a.759.759 0 0 1-1.073 0l-3.397-3.397a.759.759 0 0 1 0-1.074l3.397-3.397a.759.759 0 0 1 1.073 0zM8.09 19.445a.759.759 0 0 1 0 1.073l-3.397 3.398a.76.76 0 0 1-1.073 0L.222 20.518a.759.759 0 0 1 0-1.073l3.398-3.397a.759.759 0 0 1 1.073 0l3.397 3.397z"></path>
+      </svg>
+      <svg class="logo__caption" xmlns="http://www.w3.org/2000/svg" width="70" height="14" viewBox="-10 0 80 14">
+        <path fill-rule="evenodd" d="M7.02 9.62c0-.302-.062-.569-.188-.798a1.88 1.88 0 0 0-.533-.608 3.65 3.65 0 0 0-.82-.46 10.98 10.98 0 0 0-1.037-.362 11.82 11.82 0 0 1-1.481-.541 5.677 5.677 0 0 1-1.302-.792 3.84 3.84 0 0 1-.927-1.091C.497 4.55.38 4.068.38 3.52S.497 2.483.732 2.05c.236-.435.553-.803.95-1.106a4.406 4.406 0 0 1 1.38-.698A5.48 5.48 0 0 1 4.704 0c.611 0 1.183.094 1.717.283.533.19.999.455 1.398.796.399.34.715.749.948 1.224.21.426.327.894.353 1.403a.168.168 0 0 1-.168.174H7.177a.168.168 0 0 1-.165-.149 2.97 2.97 0 0 0-.189-.73 2.028 2.028 0 0 0-.454-.686 2.013 2.013 0 0 0-.712-.446 2.774 2.774 0 0 0-.97-.157c-.315 0-.606.041-.874.122a2.05 2.05 0 0 0-.694.36 1.68 1.68 0 0 0-.46.567 1.653 1.653 0 0 0-.165.751c0 .297.076.555.227.774.151.218.349.41.594.572.244.163.525.304.843.424.317.12.649.23.992.328.53.156 1.038.35 1.52.581.484.23.909.507 1.277.83.367.323.658.697.873 1.123.215.425.324.912.324 1.46 0 .564-.12 1.062-.359 1.494-.239.43-.559.792-.961 1.083a4.35 4.35 0 0 1-1.398.66 6.13 6.13 0 0 1-2.822.108 5.447 5.447 0 0 1-1.106-.34 4.925 4.925 0 0 1-.983-.564 3.911 3.911 0 0 1-.791-.777A3.589 3.589 0 0 1 0 9.253a.167.167 0 0 1 .167-.174h1.79c.082 0 .148.062.157.142.037.325.118.613.24.862.14.286.325.524.56.713.232.19.505.332.816.429.311.096.657.143 1.035.143.315 0 .61-.038.883-.113.274-.076.512-.188.716-.337.205-.148.365-.332.481-.55a1.56 1.56 0 0 0 .175-.748zm12.674-2.429h-5.072v3.994h5.962c.091 0 .163.073.163.162v1.388c0 .09-.072.163-.163.163h-7.906a.163.163 0 0 1-.163-.163V.336c0-.09.073-.162.163-.162h7.846c.09 0 .162.072.162.162v1.406a.16.16 0 0 1-.162.162h-5.902v3.592h5.072c.09 0 .162.073.162.162V7.03c0 .089-.073.161-.162.161zm13.544-5.287h-3.744v10.831c0 .09-.073.163-.163.163h-1.764a.161.161 0 0 1-.161-.163V1.904h-3.719a.162.162 0 0 1-.163-.162V.336c0-.09.073-.162.163-.162h9.55c.09 0 .162.072.162.162v1.406a.16.16 0 0 1-.161.162zm9.31 8.04h-3.976l-.84 2.837a.162.162 0 0 1-.155.117h-1.823a.163.163 0 0 1-.154-.213L39.628.286a.161.161 0 0 1 .154-.112h1.608c.07 0 .133.046.154.113l3.95 12.399a.162.162 0 0 1-.153.212h-1.816a.161.161 0 0 1-.154-.118l-.823-2.836zm-3.443-1.792h2.919l-1.442-4.989-1.477 4.989zm11.933-.13v4.713c0 .09-.073.163-.163.163h-1.773a.163.163 0 0 1-.162-.163V.336c0-.09.073-.162.162-.162h4.094a5.59 5.59 0 0 1 1.76.284c.54.184 1.004.446 1.395.787.39.34.694.754.913 1.24.218.487.327 1.036.327 1.648 0 .594-.11 1.13-.327 1.608a3.549 3.549 0 0 1-.913 1.223c-.391.338-.856.598-1.395.778a5.684 5.684 0 0 1-1.76.28h-2.158zm0-1.695h2.158c.356 0 .672-.055.953-.162.28-.108.518-.258.716-.45a1.93 1.93 0 0 0 .454-.691c.105-.268.158-.559.158-.873 0-.333-.053-.639-.158-.918a2.026 2.026 0 0 0-.454-.722 2.072 2.072 0 0 0-.716-.467 2.72 2.72 0 0 0-.953-.175h-2.158v4.458zM62.609 8.02v4.633a.243.243 0 0 1-.243.244h-1.61a.243.243 0 0 1-.243-.244V.418c0-.135.108-.244.242-.244h4.013c.635.006 1.222.1 1.76.284a4.11 4.11 0 0 1 1.395.787c.39.34.695.754.913 1.24.219.487.328 1.036.328 1.648 0 .594-.11 1.13-.328 1.608a3.529 3.529 0 0 1-.913 1.223 4.08 4.08 0 0 1-1.394.778c-.54.18-1.126.274-1.761.28h-2.159zm0-1.694h2.159c.355 0 .673-.055.952-.162a2.09 2.09 0 0 0 .717-.45c.197-.193.35-.423.454-.691.106-.268.158-.559.158-.873 0-.333-.052-.639-.158-.918a2.03 2.03 0 0 0-.454-.722 2.057 2.057 0 0 0-.717-.467 2.712 2.712 0 0 0-.952-.175h-2.159v4.458z"></path>
+      </svg>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav position-absolute top-0 end-0">
+          <a class="nav-link" href="#">How it works</a>
+          <a class="nav-link" href="#">All apps</a>
+          <a class="nav-link active" aria-current="page" href="#">Pricing</a>
+          <a class="nav-link disabled">For Teams</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+  
+    <div class="container-lg mt-4">
+    <div class="row">
+      <div class="col-md-3 offset-2 offset-sm-1 offset-xs-0">
+        <div class="card shadow-sm">
+          <div class="card-header fw-bold fs-3">
+            Mac
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">$9.99/mo</h5>
+            <p class="card-text">For individuals who can’t imagine life without their one and only Mac.</p>
+            <a href="#" class="btn btn-dark d-md-block">Try free</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-3">
+        <div class="card shadow-sm">
+          <div class="card-header fw-bold fs-3">
+            Mac + iOS
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">$12.49/mo</h5>
+            <p class="card-text">For those who do everything on their Mac, iPhone, and iPad.</p>
+            <a href="#" class="btn btn-dark d-md-block">Try free</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-3">
+        <div class="card shadow-sm">
+          <div class="card-header fw-bold fs-3">
+            Power User
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">$14.99/mo</h5>
+            <p class="card-text">For the true Mac geeks out there. Enjoy Setapp on all your devices.</p>
+            <a href="#" class="btn btn-dark d-md-block">Try free</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+</body>
+</html>
