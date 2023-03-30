@@ -33,7 +33,7 @@ body {
   align-content: center;
   background: rgba(241, 218, 196, 0.98);
   color: rgba(13, 12, 29, 0.7);
-  height: calc(4rem + 3%);
+  height: calc(5rem + 5%);
   padding: 2rem 1.4rem 2.8rem 2rem;
   padding-right: calc(1rem + 12%);
 }
