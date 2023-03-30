@@ -1,21 +1,22 @@
 body {
   margin: 0;
+  background-image: url('nathan-defiesta-BbbzzxW3YAc-unsplash.jpg');
+  background-size: cover;
+  background-position-y: -20rem;
+  background-position-x: center;
+  background-repeat: no-repeat;
 }
 .container-ext {
   display: grid;
   box-sizing: border-box;
-  margin: 0, 5%, 0, 15%;
+  margin: 0, 10%, 0, 15%;
   grid-template-rows: 2fr 1fr 0.5fr;
   grid-column-gap: 0;
   padding: 4%;
   padding-top: 7%;
-  margin: 0;
-  width: 100%;
+  width: 90%;
   max-height: min-content;
   min-height: 34rem;
-  background-image: url('kyle-tran-XhiVE0nJ_Eo-unsplash.jpg');
-  background-size: cover;
-  background-position: center;
   color: white;
 }
 .side-box {
@@ -31,7 +32,6 @@ body {
   background: rgba(241, 218, 196, 0.98);
   color: rgba(13, 12, 29, 0.7);
   height: calc(4rem + 3%);
-  margin: 0 5% 0 0;
   padding: 2rem 1.4rem 2.8rem 2rem;
   padding-right: calc(1rem + 12%);
 }
@@ -47,12 +47,13 @@ body {
   font-size: 11pt;
   line-height: 1.4;
   display: grid;
-  margin: 0 5% 0 0;
-  background: rgba(22, 27, 51, 0.85);
+  margin-top: 1rem;
+  background: rgba(22, 27, 51, 0.92);
   padding: 3em 3rem 3rem 3rem;
   padding-left: calc(2rem + 3%);
 }
 .text-title {
+  padding-top: 4%;
   padding-bottom: 1rem;
   font-family: "source-han-sans-korean", sans-serif;
   font-weight: 400;
@@ -66,7 +67,7 @@ body {
 }
 .pgph p {
   padding-bottom: 1px;
-  border-bottom: 2px dashed rgba(233, 236, 239, 0.3);
+  border-bottom: 1px dashed rgba(233, 236, 239, 0.3);
 }
 .pgph p:nth-child(even) {
   text-indent: 1rem;
@@ -96,4 +97,5 @@ body {
 }
 .photo_copyright a {
   color: white;
+  opacity: 75%;
 }
