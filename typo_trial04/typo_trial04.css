@@ -14,7 +14,9 @@ body {
   grid-column-gap: 0;
   padding: 4%;
   padding-top: 7%;
-  width: 90%;
+  /* width: 90%; */
+  max-width: 85%;
+  min-width: 300px;
   max-height: min-content;
   min-height: 34rem;
   color: white;
@@ -48,7 +50,7 @@ body {
   line-height: 1.4;
   display: grid;
   margin-top: 1rem;
-  background: rgba(22, 27, 51, 0.92);
+  background: rgba(22, 27, 51, 0.94);
   padding: 3em 3rem 3rem 3rem;
   padding-left: calc(2rem + 3%);
 }
@@ -98,4 +100,21 @@ body {
 .photo_copyright a {
   color: white;
   opacity: 75%;
+}
+
+@media (max-width: 500px) {
+body {
+  background-position-y: 0;
+}
+.container-ext {
+  display: block;
+  box-sizing: border-box;
+  min-width: 450px;
+  max-width: 480px;
+}
+.side-box {
+  display: block;
+  box-sizing: border-box;
+  height: 20%;
+}
 }
