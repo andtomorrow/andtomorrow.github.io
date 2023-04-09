@@ -5,6 +5,11 @@ body {
   background-repeat: no-repeat;
 }
 
+a:any-link {
+  color: rgba(73, 80, 87, .9);
+  text-decoration-line: none;
+}
+
 .container-ext {
   box-sizing: border-box;
   display: grid;
@@ -57,11 +62,18 @@ body {
   position: relative;
   margin-top: 3rem;
   text-align: right;
+  font-family: 'Oxygen', Helvetica, sans-serif;
+  font-weight: 300;
+  font-size: 13pt;
 }
 
 .source-italic {
   font-style: italic;
   letter-spacing: .05dvw;
+}
+
+.source-smallcaps {
+  font-variant-caps: all-small-caps;
 }
 
 @media (width <=1000px) {
@@ -121,12 +133,16 @@ body {
   .text-source-ko {
     position: relative;
     margin-top: 3rem;
+    font-family: "rixsingose-pro", "source-han-sans-korean", sans-serif;
+    font-weight: 300;
+    font-size: 10.75pt;
+    letter-spacing: .02dvw;
     text-align: right;
+    font-stretch: narrower;
   }
 
-  /* 
-  .source-italic {
-    font-style: italic;
-  } */
+  .source-bold {
+    font-weight: 500;
+  }
 
 }
