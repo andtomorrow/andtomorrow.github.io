@@ -76,17 +76,20 @@ body {
 
 
 @media (width > 1000px) {
+  #translation-ko {
+    font-family: "rixmmjse-pro", serif;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 11.2pt;
+    letter-spacing: .1dvw;
+  }
+
   .text-title-ko {
     position: relative;
     width: 100%;
     height: 40px;
     padding: 1.8rem 1.5rem .5rem 1.5rem;
     text-align: center;
-    /* font-family: "rixmmjse-pro", serif;
-    font-weight: 700;
-    font-style: normal;
-    Font-Size: 13pt;
-    letter-spacing: .15dvw; */
     font-family: "rixsingose-pro", "source-han-sans-korean", sans-serif;
     font-weight: 500;
     font-size: 13pt;
