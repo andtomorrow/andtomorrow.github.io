@@ -1,0 +1,129 @@
+body {
+  margin: 0;
+  background-image: url(syed-ahmad-shahabuddin-alhabshi-gmLcN7T2Nr0-unsplash.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.container-ext {
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: minmax(48px, 54px) minmax(33em, 4fr) minmax(25px, 35px) minmax(33em, 4fr) minmax(0, .5fr);
+  height: fit-content;
+  margin-bottom: 40px;
+}
+
+.side-margin {
+  margin: 0;
+}
+
+.main-text {
+  margin-top: 55px;
+  background-color: rgba(222, 226, 230, 1.00);
+  color: rgba(73, 80, 87, 1.00);
+  padding: 1.8rem 2rem;
+  font-family: 'Palatino', 'Times New Roman', Times, serif;
+  font-style: normal;
+  font-kerning: normal;
+}
+
+.text-title {
+  position: relative;
+  width: 100%;
+  height: 40px;
+  padding: 30px 15px 5px 15px;
+  text-align: center;
+  text-indent: 10vdw;
+  font-Family: 'Oxygen', Sans-Serif;
+  font-weight: 400;
+  font-Size: 12pt;
+  letter-spacing: .15dvw;
+}
+
+.text-body {
+  position: relative;
+  line-height: 1.5;
+  font-size: 12pt;
+  letter-spacing: .08dvw;
+  margin-top: 3dvh;
+}
+
+.body-sans-bold {
+  font-family: 'Oxygen', Helvetica, sans-serif;
+  font-weight: 300;
+}
+
+.text-source {
+  position: relative;
+  margin-top: 3rem;
+  text-align: right;
+}
+
+.source-italic {
+  font-style: italic;
+  letter-spacing: .05dvw;
+}
+
+@media (width <=1000px) {
+  #translation-ko {
+    display: none;
+  }
+
+  #end-margin {
+    display: none;
+  }
+}
+
+
+@media (width > 1000px) {
+  .text-title-ko {
+    position: relative;
+    width: 100%;
+    height: 40px;
+    padding: 1.8rem 1.5rem .5rem 1.5rem;
+    text-align: center;
+    /* font-family: "rixmmjse-pro", serif;
+    font-weight: 700;
+    font-style: normal;
+    Font-Size: 13pt;
+    letter-spacing: .15dvw; */
+    font-family: "rixsingose-pro", "source-han-sans-korean", sans-serif;
+    font-weight: 500;
+    font-size: 13pt;
+    letter-spacing: .1dvw;
+  }
+
+  .text-body-ko {
+    position: relative;
+    line-height: 1.6;
+    font-family: "rixmmjse-pro", serif;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 11.2pt;
+    letter-spacing: .1dvw;
+    margin-top: 3dvh;
+  }
+
+  .body-ko-sans {
+    font-family: "rixsingose-pro", "source-han-sans-korean", sans-serif;
+    font-weight: 300;
+    font-size: 10.75pt;
+    letter-spacing: .02dvw;
+  }
+
+  .body-ko-misc-punctuations {
+    font-family: serif;
+  }
+
+  .text-source-ko {
+    position: relative;
+    margin-top: 3rem;
+    text-align: right;
+  }
+
+  /* 
+  .source-italic {
+    font-style: italic;
+  } */
+
+}
