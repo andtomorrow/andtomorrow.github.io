@@ -1,0 +1,101 @@
+body {
+  background-color: rgb(26, 32, 35);
+  margin: 0;
+}
+
+.container {
+  display: grid;
+  box-sizing: border-box;
+  grid-template-columns: 1fr 8fr 3fr;
+}
+
+.container-col {
+  display: grid;
+  height: 100%;
+  padding: 7dvh 2.5dvw 2dvh 3.5dvw;
+  background-color: rgba(43, 52, 76, 0.814);
+  border-radius: 0.3em;
+}
+
+.col-lm {
+  display: grid;
+  /* grid-template-rows: 1fr 1fr minmax(5em, 10em); */
+}
+
+.upper {
+  display: grid;
+}
+
+.text-box {
+  display: grid;
+  background-color: rgba(157, 145, 213, 0.8);
+  padding: 3.5em 2em 1.5em 2.5em;
+  margin-bottom: 1.5em;
+  font-family: rixmmjse-pro, serif;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 11pt;
+  font-kerning: auto;
+  letter-spacing: 0.2;
+  color: rgba(255, 242, 242, 1.00);
+  line-height: 1.8;
+  border-radius: 0.3em;
+}
+
+.title-author {
+  margin-top: 2dvh;
+  display: grid;
+  width: 100%;
+  padding: .7dvh;
+  align-content: center;
+  font-family: rixsingose-pro, sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 10pt;
+  text-align: end;
+  background-color: rgba(229, 223, 201, .6);
+  color: rgba(29, 53, 87, .7);
+  border-radius: 0.2em;
+  /* text-decoration: none;
+  text-decoration-line: none;
+  text-decoration-color: darkslategray; */
+}
+
+.memoriam {
+  padding-right: .2em;
+  width: 30%;
+  justify-self: right;
+  font-family: roboto, sans-serif;
+  font-weight: 300;
+  font-style: italic;
+  background-color: lightgray;
+  color: darkslateblue;
+}
+
+.names {
+  position: fixed;
+  bottom: 2dvh;
+  right: 5px;
+  width: 18em;
+  height: 10em;
+  background-image: url("whale-yellow.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-origin: border-box;
+  animation-name: breathe;
+  animation-duration: 2.5s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+@keyframes breathe {
+  0% {
+      bottom: 2dhv;
+      right: 5px;
+      transform: rotate(1deg)
+  }
+  85%,
+  100% {
+      bottom: 1dvh;
+      transform: rotate(-1.5deg);
+  }
+}
