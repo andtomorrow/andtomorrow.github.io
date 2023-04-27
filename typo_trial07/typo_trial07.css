@@ -120,13 +120,17 @@ main {
 #img-source {
   position: relative;
   top: 0;
-  right: 3em;
+  right: 5em;
   text-align: right;
+  font-family: roboto, sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 11pt;
 }
 
 .link-monotone:any-link {
   text-decoration-style: none;
-  color: rgba(232, 232, 225, .8);
+  color: rgba(232, 232, 225, 0.922);
 }
 
 
