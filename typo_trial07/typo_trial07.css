@@ -6,43 +6,38 @@ body {
 
 main {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  /* fill: url(oliver-sherwin-f54dnkSRSMc-unsplash.jpg);
-  object-fit: cover;
-  object-position: left center; */
-  background-image: url(oliver-sherwin-f54dnkSRSMc-unsplash.jpg);
+  grid-template-columns: minmax(450px, 560px) minmax(450px, 560px) auto;
+  column-gap: 0;
+  background-image: url(karol-chomka-CXo4rSuxpVI-unsplash.jpg);
   background-size: 100%;
   background-position: center;
   background-position-x: left;
+  padding-bottom: 70px;
 }
 
 .cnt-fr {
   display: grid;
-  min-width: 450px;
-  color: rgb(43, 45, 59);
-  background-color: rgb(125, 176, 177);
-  mix-blend-mode: overlay;
+  color: rgb(75, 64, 89);
+  mix-blend-mode: hard-light;
 }
 
 .cnt-ko {
   display: grid;
-  min-width: 450px;
-  color: rgb(240, 225, 226);
-  background-color: rgb(53, 44, 59);
-  mix-blend-mode: overlay;
+  color: rgb(253, 248, 242);
+  mix-blend-mode: hard-light;
 }
 
 .fr-body {
-  margin: 10dvh 3dvw 2.5dvh 3dvw;
-  padding: 2dvh 3dvw 1dvh 3dvw;
-  background-color: rgba(160, 215, 220, .3);
+  margin: 8dvh 0 4dvh 4dvw;
+  padding: 1em 1em 1em 2em;
+  background-color: rgba(233, 236, 239, .6);
   border-radius: 3px;
 }
 
 .ko-body {
-  margin: 10dvh 3dvw 2.5dvh 3dvw;
-  padding: 2dvh 3dvw 1dvh 3dvw;
-  background-color: rgba(174, 116, 159, .3);
+  margin: 8dvh 4dvw 4dvh 0;
+  padding: 1em 2em 1em 1em;
+  background-color: rgba(73, 80, 87, .6);
   border-radius: 3px;
 }
 
@@ -57,7 +52,7 @@ main {
 
 .fr-texte {
   font-family: roboto, sans-serif;
-  font-weight: 400;
+  font-weight: 300;
   font-style: italic;
   font-size: 14.5pt;
   font-kerning: auto;
@@ -84,7 +79,7 @@ main {
 }
 
 .ko-title {
-  padding-top: 1dvh;
+  padding-top: 0.5em;
   text-align: right;
   font-family: rixsingose-pro, sans-serif;
   font-weight: 500;
@@ -97,9 +92,9 @@ main {
 .ko-text {
   text-align: right;
   font-family: rixsingose-pro, sans-serif;
-  font-weight: 500;
+  font-weight: 300;
   font-style: italic;
-  font-size: 12pt;
+  font-size: 12.4pt;
   font-kerning: auto;
   line-height: 26px;
 }
@@ -107,7 +102,7 @@ main {
 .ko-source {
   position: relative;
   right: 0;
-  bottom: -1dvh;
+  bottom: 0;
   margin-top: 5dvh;
   text-align: end;
   font-family: rixsingose-, sans-serif;
@@ -115,4 +110,27 @@ main {
   font-style: normal;
   font-size: 11.5pt;
   font-kerning: auto;
+}
+
+.margin-col {
+  display: grid;
+  width: 100%;
+}
+
+#img-source {
+  position: relative;
+  top: 0;
+  right: 3em;
+  text-align: right;
+}
+
+.link-monotone:any-link {
+  text-decoration-style: none;
+  color: rgba(232, 232, 225, .8);
+}
+
+
+::selection {
+  background: rgba(195, 172, 95, 0.3);
+  mix-blend-mode: lighten;
 }
