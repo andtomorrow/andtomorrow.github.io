@@ -1,0 +1,111 @@
+body {
+  display: block;
+  box-sizing: border-box;
+  margin: 0;
+}
+
+main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  /* fill: url(oliver-sherwin-f54dnkSRSMc-unsplash.jpg);
+  object-fit: cover;
+  object-position: left center; */
+  background-image: url(oliver-sherwin-f54dnkSRSMc-unsplash.jpg);
+  background-size: 100%;
+  background-position: center;
+  background-position-x: left;
+}
+
+.cnt-fr {
+  display: grid;
+  min-width: 380px;
+  color: rgb(43, 45, 59);
+  background-color: rgb(125, 176, 177);
+  mix-blend-mode: overlay;
+}
+
+.cnt-ko {
+  display: grid;
+  min-width: 380px;
+  color: rgba(248, 249, 250, 1.00);
+  background-color: rgb(53, 44, 59);
+  mix-blend-mode: overlay;
+}
+
+.fr-body {
+  margin: 10dvh 3dvw 2.5dvh 3dvw;
+  padding: 2dvh 3dvw 1dvh 3dvw;
+  background-color: rgb(160, 215, 220);
+  border-radius: 3px;
+}
+
+.ko-body {
+  margin: 10dvh 3dvw 2.5dvh 3dvw;
+  padding: 2dvh 3dvw 1dvh 3dvw;
+  background-color: rgba(174, 116, 159, 1.00);
+  border-radius: 3px;
+}
+
+.fr-titre {
+  font-family: roboto, sans-serif;
+  font-weight: 400;
+  font-style: italic;
+  font-size: 16pt;
+  margin-bottom: 8pt;
+}
+
+.fr-texte {
+  font-family: roboto, sans-serif;
+  font-weight: 400;
+  font-style: italic;
+  font-size: 14.5pt;
+  line-height: 1.5;
+}
+
+.fr-source {
+  position: relative;
+  right: 0;
+  bottom: 1dvh;
+  margin-top: 8dvh;
+  font-family: roboto, sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 13.5pt;
+  text-align: right;
+}
+
+.fr-auteur {
+  font-variant: all-small-caps;
+  font-style: italic;
+  font-size: 12pt;
+}
+
+.ko-title {
+  text-align: end;
+  font-family: rixsingose-pro, sans-serif;
+  font-weight: 500;
+  font-style: italic;
+  font-size: 15pt;
+  margin-bottom: 8pt;
+}
+
+.ko-text {
+  text-align: end;
+  font-family: rixsingose-pro, sans-serif;
+  font-weight: 500;
+  font-style: italic;
+  font-size: 13pt;
+  line-height: 1.8;
+}
+
+.ko-source {
+  position: relative;
+  right: 0;
+  bottom: 2dvh;
+  margin-top: 8dvh;
+  text-align: end;
+  font-family: rixsingose-, sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 12pt;
+}
