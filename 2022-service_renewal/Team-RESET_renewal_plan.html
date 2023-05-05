@@ -1,0 +1,691 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>[마켓컬리] 서비스 리뉴얼 기획서</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="c352fd80-4ce3-42d1-9134-400b02291fea" class="page sans"><header><h1 class="page-title">[마켓컬리] 서비스 리뉴얼 기획서</h1><table class="properties"><tbody></tbody></table></header><div class="page-body"><figure id="a01be683-c906-4c1d-be96-6f3670e998d6" class="image"><a href="sources'/Untitled.png"><img style="width:900px" src="sources/Untitled.png"/></a></figure><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="22c3e016-6b9d-414d-beeb-2c646300d2a2"><div style="font-size:1.5em"><span class="icon">👥</span></div><div style="width:100%">리셋팀(박혜인, 이태균, 정윤환, 최은혜)</div></figure><h2 id="bd93abd0-e19e-44af-bac8-5a74391042a5" class="block-color-purple"><a href="https://www.notion.so/c352fd804ce342d19134400b02291fea">‘마켓컬리’ 서비스 리뉴얼 기획서</a></h2><h3 id="7c6da998-f701-4cde-b1c0-d099d8e68aef" class="block-color-purple_background"> 목차</h3><ol type="1" id="5841c6bf-628c-4495-9c79-2fc01219ed10" class="numbered-list" start="1"><li>분석 개요</li></ol><ol type="1" id="ca3a563f-980f-4e48-817d-70594db4c829" class="numbered-list" start="2"><li>데이터 리서치</li></ol><ol type="1" id="d844a1f7-e3f2-4f90-9865-9802bee98939" class="numbered-list" start="3"><li>인터뷰</li></ol><ol type="1" id="9c9cf977-e1aa-4587-bb97-9d4bcd1995f1" class="numbered-list" start="4"><li>페르소나 설정</li></ol><ol type="1" id="5df0fc03-2571-458e-ac74-634bbda8b872" class="numbered-list" start="5"><li>고객 여정맵</li></ol><ol type="1" id="d7d8772e-083d-41be-b252-f44287cea36a" class="numbered-list" start="6"><li>페인포인트 도출</li></ol><ol type="1" id="34220d84-b377-4852-a0e7-e03ad00bd642" class="numbered-list" start="7"><li>벤치마킹</li></ol><ol type="1" id="38e252d3-234a-4ff3-9956-51cb9405abd8" class="numbered-list" start="8"><li>서비스 리뉴얼</li></ol><h3 id="fa51abf0-6a67-4d91-a479-48b955ba2da1" class="block-color-purple_background">1. 분석 개요</h3><h3 id="58abfd07-a773-40d3-9ddd-6cb792e2d342" class=""> 분석 대상 : 마켓컬리</h3><ul id="5a571fc8-9c97-4f53-b697-875f87ce5f2f" class="bulleted-list"><li style="list-style-type:disc">이유 : 팀원 모두에게 익숙한 이커머스 업체로, 코로나 시대 라이프스타일에 요구되는 서비스로 유통 분야에서 빠른 성장을 보이고 있어 주목할 만함</li></ul><ul id="ac1c7de1-ae1e-4b83-8839-b2d0c715e0d4" class="block-color-gray_background toggle"><li><details open=""><summary>마켓컬리 비전 및 가치</summary><ul id="b28d152b-a401-4b66-8c7f-4b400b47f85d" class="bulleted-list"><li style="list-style-type:disc">비전 </li></ul><blockquote id="60520e9d-0db8-419e-85ed-44007abfad70" class="">식료품의 생산, 물류, 유통을 혁신하여 생산자와 소비자가 함께 행복한 Online Grocery Service를 만듭니다.</blockquote><ul id="7dd80edf-20e2-40e4-b433-f3399bb6a7fe" class="bulleted-list"><li style="list-style-type:disc">가치</li></ul><p id="ff02e446-da41-4b9a-ab36-8361dfa29c0d" class="">(1) 나와 내 가족이 사고 싶은 상품을 판매합니다.</p><p id="b22bb63b-93e5-4d85-bc99-d6c32e17fbf2" class="">(2) 물류 혁신을 통해 최상의 품질로 전해드립니다.</p><p id="384fc673-1651-4834-ad9e-d3f40e293d26" class="">(3) 같은 품질에서 최선의 가격을 제공합니다.</p><p id="af2e81e3-3b9f-497f-bc1e-7176df4db9cb" class="">(4) 고객의 행복을 먼저 생각합니다.</p><p id="07336779-fa38-4a3c-aed6-bcb93c1d1660" class="">(5) 지속 가능한 유통을 실현해 나갑니다.</p><p id="ad0e2498-35a6-4663-a3f5-78234d76a2e4" class="">(6) 함께 변화를 주도하고 새로운 기회를 만듭니다.</p></details></li></ul><h3 id="7cd9a9e3-c4ee-4b12-96d8-e130b7d38713" class="">분석 방법</h3><ul id="70168800-bcb1-4a99-89f7-a3617b198331" class="bulleted-list"><li style="list-style-type:disc">공감에 집중하여 인사이트를 얻고 문제를 해결하는 ‘데이터 드리븐 디자인 씽킹’ 적용</li></ul><p id="83e3b439-8aed-4465-ae02-a9de62bbeace" class="">
+</p><h3 id="50e60add-bf57-47bf-b3b8-60d447fa5626" class="block-color-purple_background">2. 데이터 리서치</h3><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="f15a3f24-3eed-41c3-ada8-d5fd356e562b"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><strong>현재 마켓컬리의 현황은? </strong></div></figure><ul id="78bda30d-ff8e-404e-97f5-d7ba79d343fe" class="bulleted-list"><li style="list-style-type:disc">‘<strong>새벽배송’ 연관어: 마켓컬리(4위), 쿠팡(2위), SSG닷컴/이마트 연관어에 포함</strong></li></ul><figure id="4838c8fd-fea4-438b-9586-8a6ff456b3d1" class="image"><a href="sources/%EC%83%88%EB%B2%BD%EB%B0%B0%EC%86%A1_%EC%97%B0%EA%B4%80%EC%96%B4%EB%B6%84%EC%84%9D.png"><img style="width:728px" src="sources/%EC%83%88%EB%B2%BD%EB%B0%B0%EC%86%A1_%EC%97%B0%EA%B4%80%EC%96%B4%EB%B6%84%EC%84%9D.png"/></a></figure><hr id="b3c68696-1781-49e2-a699-bd07280b8aac"/><ul id="c50c4175-7e8d-483b-b2c8-682ebc294d3c" class="bulleted-list"><li style="list-style-type:disc"><strong>‘마켓컬리’ VS ‘SSG닷컴’(이마트몰) VS 쿠팡 비교 분석</strong></li></ul><p id="ac671b45-0404-4f19-b7cc-e3ea34a1143e" class="">긍부정 분석: 마켓컬리는 타 플랫폼들과 달리 긍정의 추이가 변화 없이 고름</p><figure id="edd0d718-fa28-4594-aab3-902458a4bdbf" class="image"><a href="sources/Mask_Group.png"><img style="width:1068px" src="sources/Mask_Group.png"/></a></figure><p id="7cc95ee0-f1ec-4b96-9c17-4b4a7f7ad558" class="">출처: 썸트렌드</p><p id="c2736f9b-2624-4d10-8c63-ddebd1a48c19" class="">
+</p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="03798df7-a121-4211-b4ca-03c2b722d0c1"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><strong>마켓컬리의 어떤 타겟을 중점으로 서비스를 리뉴얼 할 것인가?</strong></div></figure><figure id="74fce84e-8c6c-4ad4-a116-0d83225ca801" class="image"><a href="sources/Untitled%201.png"><img style="width:1606px" src="sources/Untitled%201.png"/></a></figure><blockquote id="acbaf359-d5a9-4b2a-96b0-866c998744d3" class="">세대별 온라인 소비 증감률은 50대가 22.3%로 가장 높은 증감률을 보여줌</blockquote><p id="12c87f6e-cf22-4f3a-991e-7e454a6cae30" class="">출처 : 이코노미스트 뉴스기사</p><hr id="ceb73221-6413-43e6-aec8-3977f871e632"/><figure id="781ba75a-29b5-45e7-bbe5-54e5d1de241d" class="image"><a href="sources/Untitled%202.png"><img style="width:1606px" src="sources/Untitled%202.png"/></a></figure><blockquote id="6ef61dbf-706f-4e83-a637-4275776b9fa7" class="">마켓컬리의 5060가입자 수 증가율이 다른 연령대에 비해 높은 증가율을 보여줌</blockquote><p id="cafe3d43-4e36-47b7-9e0e-fd9333b3409b" class="">출처 : 마켓컬리</p><hr id="5643d9b6-afe4-4caa-8e4c-862bbc649584"/><figure id="9e845dd4-557f-4bfa-bbda-f9751942a414" class="image"><a href="sources/Untitled%203.png"><img style="width:1580px" src="sources/Untitled%203.png"/></a></figure><blockquote id="41a71498-517c-474e-a710-96431acbc3da" class="">신규 가입자 중 5060 비중은 2020년 18%에서 2021년 26%로 비중이 높아지고 있음</blockquote><p id="8ca9c0c5-9b48-43db-a35a-de02027a9af5" class="">출처 : 마켓컬리</p><hr id="95b4b691-9c8a-4304-960e-d41de2e98887"/><figure id="568dc39b-1208-40d2-a923-c64813f3d793" class="image"><a href="sources/Untitled%204.png"><img style="width:1580px" src="sources/Untitled%204.png"/></a></figure><blockquote id="fe81bbfd-72ec-4cda-8979-82764d641f3e" class="">평균 사용 금액은 5060세대가 평균보다 13%를 더 사용</blockquote><p id="170707ab-a06b-4a82-a657-9bb4854017da" class="">출처 : 마켓컬리</p><hr id="1bb39f98-94ae-4ed4-a0bc-335829dc20a8"/><figure id="5c0e030e-d841-4e74-b299-fa21fed08b00" class="image"><a href="sources/Untitled%205.png"><img style="width:1582px" src="sources/Untitled%205.png"/></a></figure><blockquote id="38848978-0f96-40d3-a36e-c6849e13b425" class="">매출 증가율은 전체 평균보다 12%, 구매 횟수 증가율은 전체보다 19% 증가함</blockquote><p id="996779d8-04b7-407f-8666-80b8dfc3560d" class="">출처 : 마켓컬리</p><hr id="4c7a55d5-7503-49af-9e3a-c46add91de3e"/><figure id="34c17eb6-2a78-4bcd-8ece-51e6c22eddd4" class="image"><a href="sources/Untitled%206.png"><img style="width:1266px" src="sources/Untitled%206.png"/></a></figure><hr id="04ebcbed-ba6a-4e1f-bf3f-48b8ceab1f04"/><figure id="427bf4e7-d0d1-4998-a461-311a3df10400" class="image"><a href="sources/Untitled%207.png"><img style="width:1420px" src="sources/Untitled%207.png"/></a></figure><blockquote id="b2c5c8dd-cc64-4f1a-88f7-b7613d09bb09" class="">‘마켓컬리’ 검색량은 여성의 비중이 77%로 더 높으며, 40대 다음으로 50대가 많이 검색함</blockquote><p id="6d6d8ef9-1f6b-46b2-ac37-4f5a28538e42" class="">출처 : 카카오 데이터 트렌드</p><p id="e1c3c6b3-6279-4965-b4a2-133fe14609ed" class="">
+</p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="deb7e39d-4f79-4377-8029-dd1edc3430d8"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><strong>마켓컬리는 리뉴얼을 통해 무엇이, 어떻게 달라져야 할까?’</strong></div></figure><figure id="051bfd6d-4473-469d-89c4-ed709db9f273" class="image"><a href="sources/Untitled%208.png"><img style="width:1584px" src="sources/Untitled%208.png"/></a></figure><blockquote id="e2155fee-50aa-4e05-af47-079cad8ace15" class="">50대 이상이 가장 많이 사용하는 쇼핑 앱에 마켓컬리가 낮은 순위를 보이는 것으로 보아, 마켓컬리의 장기적인 가입자 수 증가 및 매출 증가를 위해 5060세대를 타겟으로 한 서비스 리뉴얼이 필요함</blockquote><p id="59a5f0cc-17d1-4373-b66f-fb4a37bee4be" class="">출처 : 와이즈앱, 와이즈리테일</p><hr id="bca167e2-4966-41f6-a7c6-d4f95aeb4480"/><ul id="0540268e-df06-4a39-a3e2-1e31b6f45a4f" class="bulleted-list"><li style="list-style-type:disc"><strong>썸트렌드 ‘마켓컬리’ 5060 세대 긍부정어 분석 - 부정어</strong></li></ul><p id="f4294d0e-a565-4056-ada0-c7999207d08f" class="">: 스트레스, 어렵다, 착잡하다, 쉽지 않다, 불편, 감 오지 않다, 혼란스럽다, 오래 걸리다, 이해가지 않다, 개선되지 않다, 자신없다</p><p id="b915ee6b-00a1-48c6-868c-0200756f8316" class="">
+</p><h3 id="a55331ff-6655-4fd1-be94-d786a0ba07ea" class="block-color-purple_background">3. 인터뷰</h3><ul id="b04c61d5-9793-4e62-946e-9c534bf02bcf" class="bulleted-list"><li style="list-style-type:disc"><strong>응답자 정보</strong>
+- 만 66세 남성 직장인</li></ul><ul id="6722d200-f178-4c27-9d25-920a5e2ef70e" class="toggle"><li><details open=""><summary>질문지</summary><ul id="07d49e9c-988b-4537-b3a8-3551c9c6adc4" class="bulleted-list"><li style="list-style-type:disc">마켓컬리를 사용하게 된 계기는?</li></ul><ul id="91b8fad7-f9c6-4234-98a7-bd2df6e0f156" class="bulleted-list"><li style="list-style-type:disc">마켓컬리를 얼마나 이용하는지? </li></ul><ul id="c33a49dc-1348-4b4a-9c1a-fda3f04f0280" class="bulleted-list"><li style="list-style-type:disc">마켓컬리에서 주로 구매하는 상품은 무엇인지? </li></ul><ul id="ccd5b509-cf2e-40c7-a7eb-c98f1337758f" class="bulleted-list"><li style="list-style-type:disc">마켓컬리를 이용하면서 편리한 점과 불편한 점은 무엇인지? </li></ul><ul id="142c3dc7-f75c-4255-b024-71c617d7cab1" class="bulleted-list"><li style="list-style-type:disc">마켓컬리에서 장바구니에 상품을 담을 때 어려운 점이 있는지? </li></ul><ul id="f040ed1e-848e-4a86-9920-dae9af376148" class="bulleted-list"><li style="list-style-type:disc">물건 검색할 때 혹은 결제할 때 불편한 점? 물건을 받을 때 어려운 점이 있는지? 후기 사용 또는 작성하는데 어려운 점이 있는지?</li></ul><ul id="ad135390-b75a-4a39-ae17-f2b23979e11a" class="bulleted-list"><li style="list-style-type:disc">교환 환불 경험, 포인트 적립 소멸, 푸쉬 알림, 쿠폰 사용, 신선식품 vs 생활용품, 친구 추천 초대, 찜하기 등</li></ul></details></li></ul><ul id="df95c579-514c-4eb5-b61f-e1c8e44f91ad" class="bulleted-list"><li style="list-style-type:disc"><strong>마켓컬리 이용 배경
+- </strong>아들의 권유로 시작
+- 오프라인(대형마트)에서 장보기가 우선
+- 급하게 필요한 것이 있거나 쿠폰 있을 때 주로 구매</li></ul><ul id="383fecc7-18c8-4fdb-8727-de494b7acb25" class="bulleted-list"><li style="list-style-type:disc"><strong>인사이트 도출
+- </strong>글씨가 작아 상세 설명 읽기 어려움
+- 첫 구매 시 결제 수단 등록하는 과정 번거로움
+- 후기 읽기 어렵고 도움 되는 후기 없어 읽지 않음
+- 추천 리스트의 상품이 어떤 기준으로 추천되는 것인지 알 수 없음
+- 찜하기 기능의 존재에 대해 모르고 있음</li></ul><p id="c8c5d7aa-28e1-46ca-8f23-2484f1659b65" class="">
+</p><h3 id="afe91277-e173-4346-9f25-edd43573c9e2" class="block-color-purple_background">4. 페르소나 설정</h3><figure id="a0416d34-fb16-4dd2-94db-ae23f29b5cab" class="image"><a href="sources/%EC%9C%A4%EC%9C%A0%EC%84%A0.jpg"><img style="width:288px" src="sources/%EC%9C%A4%EC%9C%A0%EC%84%A0.jpg"/></a></figure><figure class="block-color-pink_background callout" style="white-space:pre-wrap;display:flex" id="d5b5fe7f-6a50-4869-8172-f80d9c84a135"><div style="font-size:1.5em"><span class="icon">👩🏻‍🦱</span></div><div style="width:100%">이름: 김미희 / 성별: 여성 / 나이: 55세 / 거주 지역: 경기도/ 직업: 공무원</div></figure><figure class="block-color-pink_background callout" style="white-space:pre-wrap;display:flex" id="6b18bfcf-4979-4ab8-9d56-413cd3746798"><div style="font-size:1.5em"><span class="icon">🔥</span></div><div style="width:100%">성격/성향: 꼼꼼함, 건강을 중시, 완벽주의 성향, 일과 가정 모두 잘 챙기고 싶어함</div></figure><ul id="14282011-c78d-48e7-882f-b1a15e87812d" class="bulleted-list"><li style="list-style-type:disc"><strong>생활 패턴</strong><p id="93170c67-fec2-491f-abed-ebfeed594a11" class="">- 아침 식사 후 출근 </p><p id="76ee9ba9-7e41-4d7f-9575-dabedaa51cdd" class="">- 점심은 동료와 먹거나 도시락으로 해결 </p><p id="b4776505-becf-49cf-8aef-7c45fd519171" class="">- 퇴근 후 장을 보고 요리함, 가끔 음식을 사가거나 배달 시켜서 가족과 식사 </p><p id="1e788a32-2bfa-4980-b49d-6800e869ac11" class="">- 밤에 유튜브로 요리 관련 영상을 보거나 내일 가져갈 도시락을 준비함</p></li></ul><ul id="aed8f5d4-5ed9-4c9a-91f4-738a0d44c5d3" class="bulleted-list"><li style="list-style-type:disc"><strong>특징</strong><p id="b1d70d44-71fc-4574-b4c7-4ce3ba33bd29" class="">- 20대 자녀와 남편과 함께 거주</p><p id="c4f76536-8d86-41ca-8271-c951dc190061" class="">- 코로나 이후로 집에서 온 가족이 밥을 먹을 시간이 많아짐</p><p id="66b5ae64-6c77-49e0-8b89-fbef6f4ba63f" class="">- 모바일 앱은 카카오톡과 유튜브 정도만 사용</p></li></ul><ul id="be6d2e38-44ca-46f6-8ecd-0c821eb03535" class="bulleted-list"><li style="list-style-type:disc"><strong>페인포인트</strong><p id="6fd23122-7238-4b28-8e49-5dc756abf873" class="">- 가족들과 건강하게 먹고 싶고 도시락도 싸가야 하는데 요리가 버거워지고 있음</p><p id="4d997c27-c0c1-4450-b818-3d16acd5a985" class="">- 코로나 이후 장을 자주 봐야만 하는데 바빠서 마트에 갈 시간이 부족하며, 가족과 더 많은 시간을 보내고 싶음</p><p id="c302bddd-8d58-43d0-8e39-cbc08886f1c0" class="">- 아침 식사도 할 수 있게 새벽 배송이 되는 앱도 써보고 간편식도 사보려고 하는데 어떻게 사용해야 하는지 어떤 제품을 골라야 할지 모르겠음</p></li></ul><p id="a4dcd45d-c0bb-4d05-a663-f8218098bd56" class="">
+</p><h3 id="1e1186de-1a00-4987-8e6a-ca7b503ba1a1" class="block-color-purple_background">5. 고객 여정맵</h3><figure id="f75795f5-5de7-4b11-a977-a62c960282a0" class="image"><a href="sources/%EC%8A%AC%EB%9D%BC%EC%9D%B4%EB%93%9C1.jpg"><img style="width:922px" src="sources/%EC%8A%AC%EB%9D%BC%EC%9D%B4%EB%93%9C1.jpg"/></a></figure><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="697c2e94-389d-4fe7-842a-bc6c00b7759e"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><strong>5060을 위한</strong> <strong>마켓컬리 서비스의 문제점 및 개선점</strong></div></figure><ul id="7470e7d0-f1fb-4b8d-be1f-ec28a8bb9c8a" class="bulleted-list"><li style="list-style-type:disc">사용자 중심의 메인 페이지 개선</li></ul><ul id="6232714f-845f-46d8-8544-aba00eb852b9" class="bulleted-list"><li style="list-style-type:disc">큰 글씨 및 간략한 설명 필요</li></ul><ul id="7e97cef9-4206-48f4-9ae6-58a83c99c718" class="bulleted-list"><li style="list-style-type:disc">장바구니 및 찜하기 UI 개선</li></ul><ul id="2b6efec3-e5bf-4c3e-abad-25d719196b13" class="bulleted-list"><li style="list-style-type:disc">결제 간소화 및 대리 결제 시스템 필요</li></ul><p id="c9a475c5-22a9-4205-9aa1-5bcda3be970f" class="">
+</p><h3 id="2b0db3c5-f7c0-47db-b5ce-8be401d451da" class="block-color-purple_background">6. 페인포인트 도출</h3><p id="68e07169-8537-44d3-95f2-68453c2f91de" class=""><strong>1) 메인 페이지</strong></p><ul id="bef90ef4-2968-4ae2-9283-aad16f5ff294" class="bulleted-list"><li style="list-style-type:disc">메인 페이지가 ‘컬리추천’이며 추천 영역에 큐레이션 되는 기준을 알기 어려움
+: 사용자가 이전에 보았거나 구매한 상품 기준으로 큐레이션 되는 것으로 추정</li></ul><ul id="bff89f14-71aa-4c08-a7cb-1adb906b7860" class="bulleted-list"><li style="list-style-type:disc">나와 비슷한 나이, 소비 패턴을 가진 사용자가 어떤 상품을 구매하는지 알 수 없음</li></ul><ul id="9f399096-b3ac-4a43-9e9d-bad5cf0dfa9e" class="bulleted-list"><li style="list-style-type:disc">5060세대에게 글씨 크기가 작아서 불편함</li></ul><figure id="fc788352-eb02-495b-a70c-71c947d4fee5" class="image"><a href="sources/%EC%B6%94%EC%B2%9C.png"><img style="width:1920px" src="sources/%EC%B6%94%EC%B2%9C.png"/></a></figure><p id="cf019d70-5f48-4b5f-8ea8-dd05a5cda91a" class=""><strong>2) 장바구니 및 찜하기 </strong></p><ul id="0aa1604e-3078-4477-9781-2929330261a7" class="bulleted-list"><li style="list-style-type:disc">‘찜하기’ 기능인 하트 버튼이 존재하나 5060세대가 인지하기 어려움</li></ul><ul id="08cc2685-7f65-4a8b-8830-f406cf42dafd" class="bulleted-list"><li style="list-style-type:disc">버튼을 눌렀을 경우 색만 채워지는 형태로 ‘찜하기’ 기능인지 알 수 없음</li></ul><ul id="3b912007-6acb-4c04-a69a-462a1d537d11" class="bulleted-list"><li style="list-style-type:disc">찜한 상품을 장바구니에서 볼 수 없고 ‘마이컬리’에서 찜한 상품 내역을 다시 찾아서 들어가야 함</li></ul><figure id="2a90c255-c63f-4d7e-9af2-a3d313144c54" class="image"><a href="sources/%EC%B0%9C%ED%95%98%EA%B8%B0.png"><img style="width:2210px" src="sources/%EC%B0%9C%ED%95%98%EA%B8%B0.png"/></a></figure><p id="4474384d-2c2f-4494-90ea-e8df98229020" class="">
+</p><p id="eff02121-e2eb-4ec5-af26-f439f08ddf85" class=""><strong>3) 결제</strong></p><ul id="631c14ae-91a5-473e-b989-324afbce1a8b" class="bulleted-list"><li style="list-style-type:disc">장바구니에서 주문하기를 누르면 결제 단계로 넘어감</li></ul><ul id="81587a16-84f5-474d-bf54-c26b8a865a76" class="bulleted-list"><li style="list-style-type:disc">결제 수단에서 ‘신용카드’ 선택 시 해당 카드 결제 영역으로 넘어가며 복잡하게 느낄 수 있음</li></ul><ul id="ae966b4a-6470-4e9a-b399-7ed0c87d79e5" class="bulleted-list"><li style="list-style-type:disc">‘간편 결제’ 선택 시 사용하는 간편 결제 서비스가 없을 경우 진행 어려움</li></ul><figure id="6079f67b-570c-4428-8c2a-8f141d95e263" class="image"><a href="sources/%EA%B2%B0%EC%A0%9C.png"><img style="width:1663px" src="sources/%EA%B2%B0%EC%A0%9C.png"/></a></figure><p id="14c45645-674d-4f35-8b19-63dd09aac4cf" class="">
+</p><h3 id="7de6f050-9912-47a9-a7fe-231212e90bea" class="block-color-purple_background">7. 벤치마킹</h3><p id="94a65423-c183-4165-95ec-363a76dac302" class=""><strong>1) 이마트몰</strong></p><ul id="e7503a48-5088-4e50-a612-b480e5bcb593" class="bulleted-list"><li style="list-style-type:disc">함께 장보기<p id="0075730b-e178-4169-80d2-9c59c673029b" class="">- 이마트몰 장바구니에서 ‘함께 장보기’라는 서비스 운영 중</p><p id="7416663f-14b0-442a-a9a9-65d7f3aa8ae8" class="">- 장바구니 이름과 주소를 설정하고 친구를 초대하여 함께 상품을 골라 장바구니에 넣으며 장을 보고 배송 받을 수 있음</p></li></ul><figure id="f7de2d6a-8b90-4c48-a2ec-ca44a9fee739" class="image"><a href="sources/%ED%95%A8%EA%BB%98%EC%9E%A5%EB%B3%B4%EA%B8%B0.png"><img style="width:960px" src="sources/%ED%95%A8%EA%BB%98%EC%9E%A5%EB%B3%B4%EA%B8%B0.png"/></a></figure><p id="770fe21f-0028-4031-83f0-42cd513604ba" class=""><strong>2) 쿠팡</strong></p><ul id="5276cf61-72ad-4e67-a448-b9afeee0a302" class="bulleted-list"><li style="list-style-type:disc">찜하기<p id="89c8bc3d-a620-45a3-b90a-9465fa0ea95c" class="">- 쿠팡은 하트 아이콘을 누르면 “찜한 상품에 저장되었습니다.”라는 팝업 메세지가 등장</p><p id="ed25ea1b-0a52-405e-8bd7-2db0ad79fe98" class="">- 장바구니 내에서 찜한 상품을 함께 확인할 수 있음</p></li></ul><figure id="18ea6f67-7fc6-4c0c-a292-e1549a3a989a" class="image"><a href="sources/Untitled-1.png"><img style="width:1600px" src="sources/Untitled-1.png"/></a></figure><ul id="8106bfc8-9208-43be-adbf-14bd6a8a7449" class="bulleted-list"><li style="list-style-type:disc">결제<p id="7ed6a72e-c7ab-4546-b4fe-91ca8ffc0e4e" class=""> - 첫 결제 수단 등록 후 ‘결제하기’ 버튼만 누르면 바로 결제가 완료</p></li></ul><figure id="dc6700bc-b818-45af-9513-12e1efd4c1a8" class="image"><a href="sources/3.png"><img style="width:1920px" src="sources/3.png"/></a></figure><h3 id="3d2e7fca-917b-47a8-a35d-9e6f85864730" class="block-color-purple_background">8. 서비스 리뉴얼</h3><p id="961a9e0a-325d-401a-9c72-85b5a4fdbbc5" class=""><strong>1) 메인 페이지</strong><div class="indented"><ul id="5f69d7c8-52e1-46b5-a99b-15a286c59da6" class="bulleted-list"><li style="list-style-type:disc">유저의 나이 및 성별에 따른 추천 큐레이션을 반영</li></ul><ul id="ba45dced-eb60-44e1-a6d6-4538ab0895bb" class="bulleted-list"><li style="list-style-type:disc">‘큰 글씨 보기’ 선택 시 다른 메인 페이지 제공<figure id="1454831c-1132-44e3-a868-2477bbdf8769" class="image"><a href="sources/Group_15.png"><img style="width:1920px" src="sources/Group_15.png"/></a></figure></li></ul></div></p><p id="9b1f868d-54a4-4602-ba9b-eab39a33a837" class=""><strong>2) 찜하기</strong></p><ul id="608643e3-9a36-413b-9686-1acc1a056ee8" class="bulleted-list"><li style="list-style-type:disc">기존 하트 아이콘에서 ‘찜하기’ 문구를 넣어 직관적으로 UI 수정 </li></ul><ul id="ee87dca6-1af1-4b4e-8ed6-fb78f95d34e7" class="bulleted-list"><li style="list-style-type:disc">찜한 상품을 살펴보기 쉽게 비교가 가능하도록 장바구니 옆에 ‘찜한 상품’ 탭 추가<figure id="c549819e-ae01-4ea9-bb9b-edc153438018" class="image"><a href="sources/Group_13.png"><img style="width:1322px" src="sources/Group_13.png"/></a></figure></li></ul><p id="f93080f3-5cfb-4c8c-b8b4-50e9e41868e4" class="">
+</p><p id="912010ef-e9ad-4e77-9e9a-f6447b77cd06" class=""><strong>3) ‘함께 장보기’ 및 원터치 결제 시스템</strong></p><ul id="71b8f056-86e1-47a9-a091-4a21b5474fbf" class="bulleted-list"><li style="list-style-type:disc">장바구니 탭에서 ‘함께 장보기’ 추가하여 가족과 함께 장바구니에 물건을 담을 수 있게 함</li></ul><ul id="d7fd7c71-7796-49d2-8c82-0d5447995aea" class="bulleted-list"><li style="list-style-type:disc">‘함께 장보기’ 이용 시 함께 장보는 가족 중 아무나 결제를 할 수 있게 함</li></ul><ul id="3d321a76-db5f-4126-8863-64638f7d8b07" class="bulleted-list"><li style="list-style-type:disc">기존 결제 시스템을 간소화 한 원터치 결제 방식 추가<figure id="1bd320e8-8ad8-42aa-a5cd-94e30543ab40" class="image"><a href="sources/Group_16.png"><img style="width:1924px" src="sources/Group_16.png"/></a></figure></li></ul><p id="937fe3dc-1887-4449-8662-34cd2b491d8f" class="">
+</p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="63b60402-d6d3-44a8-9869-23022bc21449"><div style="font-size:1.5em"><span class="icon">😀</span></div><div style="width:100%">발표 들어주셔서 감사합니다.</div></figure><p id="adc1ab67-429c-4405-9c88-ffcecfda0403" class="">
+</p></div></article></body></html>
