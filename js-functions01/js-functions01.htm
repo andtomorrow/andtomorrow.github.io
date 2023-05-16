@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base href="@@base@@" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="viewport-fit=cover, width=device-width, height=device-height, initial-scale=1" />
+    <link rel="stylesheet" href="engine/main.css" />
+    <link rel="stylesheet" href="theme/tokyo.css" />
+    <link rel="stylesheet" href="engine/katex/katex.min.css" />
+    <!--<link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />-->
+    <style>
+    :root{
+--logo: ;
+--darkaccent1color: ;
+--lightaccent1color: ;
+--accent2: #43aa8b;
+--accent3: #f9c74f;
+--accent4: #90be6d;
+--accent5: #f8961e;
+--accent6: #577590;
+--lighttitletextcolor: #ffffff;
+--darktitletextcolor: #0c2632;
+--lightbodytextcolor: #ffffff;
+--darkbodytextcolor: #223640;
+--lightbackgroundcolor: transparent;
+--darkbackgroundcolor: transparent;
+--bodyfont: spoqa han sans neo;
+--titlefont: spoqa han sans neo;
+} 
+
+    </style>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="engine/print.css"
+      media="print"
+    />
+  </head>
+
+  <body class="responsive">
+    <div class="reveal">
+      <div class="slides"><section class="variable-size-headings has-footnotes has-header light has-background-image default-container present has-light-background fitted" data-background-image="images/paul-esch-laurent-oZMUrWFHOB4-unsplash.jpg" data-state="background-opacity-60" data-background-color="#d3e9f8" style="display: grid;" data-updated="true">
+
+      <div class="header"><div class="leading">JavaScript –<br>function, its declaration, scope and call-backs</div><div class="middle"></div><div class="trailing">https://www.craft.do/s/XUSqE9unZVgfAx<br>Formatted with iA Presenter</div></div>
+      <div class="layout-default" style="width: 100%; font-size: 1rem;">
+        <div style=""><h2 id="함수br선언방식과스코프br콜백함수https:ko.javascript.infofunction-basics">함수,<br>선언 방식과 스코프,<br>콜백 함수<sup><a href="#fn1" id="fnr1" title="see footnote" class="footnote">1</a></sup></h2></div>
+      </div>
+      <div class="footnotes">
+<ol>
+
+<li id="fn1">
+<p>https://ko.javascript.info/function-basics <a href="#fnr1" title="return to article" class="reversefootnote">↩︎</a></p>
+</li>
+
+</ol>
+</div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="variable-size-headings has-footnotes has-header light default-container present has-light-background fitted" data-background-color="#d1e4f3" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading">JavaScript –<br>function, its declaration, scope and call-backs</div><div class="middle"></div><div class="trailing">https://www.craft.do/s/XUSqE9unZVgfAx<br>Formatted with iA Presenter</div></div>
+      <div class="layout-default" style="width: 100%; font-size: 1rem;">
+        <div style=""><h3 id="1.함수선언문functiondeclaration">1. 함수 선언문<sup><a href="#fn1" id="fnr1" title="see footnote" class="footnote">1</a></sup></h3>
+
+<pre><code class="javascript hljs"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">showMessage</span>(<span class="hljs-params"></span>) </span>{
+    alert( <span class="hljs-string">'안녕하세요!'</span> );
+}
+</code></pre>
+
+<p><code class="hljs actionscript"><span class="hljs-function"><span class="hljs-keyword">function</span></span></code> 키워드, <strong>함수 이름</strong>, 괄호로 둘러싼 <strong>매개변수</strong><sup><a href="#fn2" id="fnr2" title="see footnote" class="footnote">2</a></sup> , 그리고 중괄호로 감싼 ‘<strong>함수 본문</strong>’</p></div>
+      </div>
+      <div class="footnotes">
+<ol>
+
+<li id="fn1">
+<p>function declaration <a href="#fnr1" title="return to article" class="reversefootnote">↩︎</a></p>
+</li>
+
+<li id="fn2">
+<p>parameter. 위 함수처럼 매개변수가 없을 수도 있음 <a href="#fnr2" title="return to article" class="reversefootnote">↩︎</a></p>
+</li>
+
+</ol>
+</div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="variable-size-headings has-header light default-container present has-light-background fitted" data-background-color="#cfe0ef" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading">JavaScript –<br>function, its declaration, scope and call-backs</div><div class="middle"></div><div class="trailing">https://www.craft.do/s/XUSqE9unZVgfAx<br>Formatted with iA Presenter</div></div>
+      <div class="layout-default" style="width: 100%; font-size: 1rem;">
+        <div style=""><p>아래 예시는 매개변수를 N개 갖는 함수</p>
+
+<pre><code class="javascript hljs"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">name</span>(<span class="hljs-params">parameter1, parameter2, ...parameterN</span>) </span>{
+  <span class="hljs-comment">// body</span>
+}
+</code></pre></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="variable-size-headings has-header light default-container present has-light-background fitted" data-background-color="#d3ddec" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading">JavaScript –<br>function, its declaration, scope and call-backs</div><div class="middle"></div><div class="trailing">https://www.craft.do/s/XUSqE9unZVgfAx<br>Formatted with iA Presenter</div></div>
+      <div class="layout-default" style="width: 100%; font-size: 1rem;">
+        <div style=""><h3 id="2.함수호출">2. 함수 호출</h3>
+
+<p>함수 이름 옆에 괄호를 붙임</p>
+
+<pre><code class="javascript hljs"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">showMessage</span>(<span class="hljs-params"></span>) </span>{
+  alert( <span class="hljs-string">'안녕하세요!'</span> );
+}
+
+showMessage();
+showMessage();
+</code></pre></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="variable-size-headings has-footnotes has-header light default-container present fit-warning has-light-background fitted" data-background-color="#dbdceb" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading">JavaScript –<br>function, its declaration, scope and call-backs</div><div class="middle"></div><div class="trailing">https://www.craft.do/s/XUSqE9unZVgfAx<br>Formatted with iA Presenter</div></div>
+      <div class="layout-default" style="width: 100%; font-size: 0.766rem;">
+        <div style=""><h3 id="3.지역변수localvariable">3. 지역 변수<sup><a href="#fn1" id="fnr1" title="see footnote" class="footnote">1</a></sup></h3>
+
+<p>함수 내에서 선언한 변수. 함수 내에서만 접근할 수 있음</p>
+
+<pre><code class="javascript hljs"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">showMessage</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">let</span> message = <span class="hljs-string">"안녕하세요!"</span>;
+
+  alert( message );
+}
+
+showMessage(); <span class="hljs-comment">// 안녕하세요!</span>
+
+alert( message ); <span class="hljs-comment">// 참조 오류 발생</span>
+</code></pre></div>
+      </div>
+      <div class="footnotes">
+<ol>
+
+<li id="fn1">
+<p>local variable <a href="#fnr1" title="return to article" class="reversefootnote">↩︎</a></p>
+</li>
+
+</ol>
+</div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="variable-size-headings has-footnotes has-header light default-container present has-light-background fitted" data-background-color="#e4dbea" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading">JavaScript –<br>function, its declaration, scope and call-backs</div><div class="middle"></div><div class="trailing">https://www.craft.do/s/XUSqE9unZVgfAx<br>Formatted with iA Presenter</div></div>
+      <div class="layout-default" style="width: 100%; font-size: 1rem;">
+        <div style=""><h3 id="4.외부변수outervariable">4. 외부 변수<sup><a href="#fn1" id="fnr1" title="see footnote" class="footnote">1</a></sup></h3>
+
+<ul>
+<li>함수 내부에서 외부변수에 접근할 수 있음</li>
+<li>접근뿐 아니라 수정도 할 수 있음</li>
+</ul></div>
+      </div>
+      <div class="footnotes">
+<ol>
+
+<li id="fn1">
+<p>outer variable <a href="#fnr1" title="return to article" class="reversefootnote">↩︎</a></p>
+</li>
+
+</ol>
+</div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="variable-size-headings has-header light default-container present has-light-background fitted" data-background-color="#e6d5e2" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading">JavaScript –<br>function, its declaration, scope and call-backs</div><div class="middle"></div><div class="trailing">https://www.craft.do/s/XUSqE9unZVgfAx<br>Formatted with iA Presenter</div></div>
+      <div class="layout-default" style="width: 100%; font-size: 0.906rem;">
+        <div style=""><pre><code class="javascript hljs"><span class="hljs-keyword">let</span> userName = <span class="hljs-string">'John'</span>;
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">showMessage</span>(<span class="hljs-params"></span>) </span>{
+  userName = <span class="hljs-string">"Bob"</span>; <span class="hljs-comment">// 외부 변수를 수정함</span>
+
+  <span class="hljs-keyword">let</span> message = <span class="hljs-string">'Hello, '</span> + userName;
+  alert(message)
+}
+alert( userName ); <span class="hljs-comment">// John</span>
+
+showMessage();
+
+alert( userName ); <span class="hljs-comment">// Bob</span>
+</code></pre></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="variable-size-headings has-footnotes has-header light default-container present has-light-background fitted" data-background-color="#e8cfda" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading">JavaScript –<br>function, its declaration, scope and call-backs</div><div class="middle"></div><div class="trailing">https://www.craft.do/s/XUSqE9unZVgfAx<br>Formatted with iA Presenter</div></div>
+      <div class="layout-default" style="width: 100%; font-size: 1rem;">
+        <div style=""><h3 id="5.기본값defaultvalue">5. 기본값<sup><a href="#fn1" id="fnr1" title="see footnote" class="footnote">1</a></sup></h3>
+
+<ul>
+<li>함수 호출 시 매개변수에 인수를 전달하지 않으면 그 값은 <code class="hljs actionscript"><span class="hljs-literal">undefined</span></code>가 됨</li>
+<li>함수를 선언할 때 <code class="hljs haml">=</code>를 사용해 기본값을 설정할 수 있음</li>
+</ul></div>
+      </div>
+      <div class="footnotes">
+<ol>
+
+<li id="fn1">
+<p>default value <a href="#fnr1" title="return to article" class="reversefootnote">↩︎</a></p>
+</li>
+
+</ol>
+</div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="variable-size-headings has-footnotes has-header light default-container present has-light-background fitted" data-background-color="#ead0d8" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading">JavaScript –<br>function, its declaration, scope and call-backs</div><div class="middle"></div><div class="trailing">https://www.craft.do/s/XUSqE9unZVgfAx<br>Formatted with iA Presenter</div></div>
+      <div class="layout-default" style="width: 100%; font-size: 1rem;">
+        <div style=""><h3 id="6.반환값returnvalue">6. 반환 값<sup><a href="#fn1" id="fnr1" title="see footnote" class="footnote">1</a></sup></h3>
+
+<pre><code class="javascript hljs"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">sum</span>(<span class="hljs-params">a, b</span>) </span>{
+  <span class="hljs-keyword">return</span> a + b;
+}
+
+<span class="hljs-keyword">let</span> result = sum(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>);
+alert( result ); <span class="hljs-comment">// 3</span>
+</code></pre></div>
+      </div>
+      <div class="footnotes">
+<ol>
+
+<li id="fn1">
+<p>return value <a href="#fnr1" title="return to article" class="reversefootnote">↩︎</a></p>
+</li>
+
+</ol>
+</div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="variable-size-headings has-header light default-container present fit-warning has-light-background fitted" data-background-color="#edd7da" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading">JavaScript –<br>function, its declaration, scope and call-backs</div><div class="middle"></div><div class="trailing">https://www.craft.do/s/XUSqE9unZVgfAx<br>Formatted with iA Presenter</div></div>
+      <div class="layout-default" style="width: 100%; font-size: 0.719rem;">
+        <div style=""><ul>
+<li>지시자 <code class="hljs kotlin"><span class="hljs-keyword">return</span></code>은 함수 내 어디서든 사용할 수 있음. 실행 흐름이 <code class="hljs kotlin"><span class="hljs-keyword">return</span></code>을 만나면 <strong>함수 실행은 즉시 중단되고 함수를 호출한 곳에 값을 반환함</strong></li>
+<li>함수 하나에 여러 개의 <code class="hljs kotlin"><span class="hljs-keyword">return</span></code> 문이 올 수도 있음</li>
+</ul>
+
+<pre><code class="javascript hljs"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">checkAge</span>(<span class="hljs-params">age</span>) </span>{
+  <span class="hljs-keyword">if</span> (age &gt;= <span class="hljs-number">18</span>) {
+    <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;
+  } <span class="hljs-keyword">else</span> {
+    <span class="hljs-keyword">return</span> confirm(<span class="hljs-string">'보호자의 동의를 받으셨나요?'</span>);
+  }
+}
+</code></pre>
+
+<ul>
+<li><code class="hljs kotlin"><span class="hljs-keyword">return</span></code> 값이 없는 경우 함수는 <code class="hljs actionscript"><span class="hljs-literal">undefined</span></code>를 반환함</li>
+</ul></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="variable-size-headings has-header light default-container present has-light-background fitted" data-background-color="#f1dedd" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading">JavaScript –<br>function, its declaration, scope and call-backs</div><div class="middle"></div><div class="trailing">https://www.craft.do/s/XUSqE9unZVgfAx<br>Formatted with iA Presenter</div></div>
+      <div class="layout-default" style="width: 100%; font-size: 1rem;">
+        <div style=""><p><mark><code class="hljs kotlin"><span class="hljs-keyword">return</span></code>과 값 사이에 줄을 삽입하지 말 것</mark></p>
+
+<pre><code class="javascript hljs"><span class="hljs-keyword">return</span>
+  (some + result * f(a) + f(b))
+</code></pre>
+
+<p>↘︎ <em>자동으로 세미콜론이 삽입됨</em></p>
+
+<pre><code class="javascript hljs"><span class="hljs-keyword">return</span>;
+  (some + result * f(a) + f(b))
+</code></pre></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="variable-size-headings has-header light default-container present has-light-background fitted" data-background-color="#f3e1dd" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading">JavaScript –<br>function, its declaration, scope and call-backs</div><div class="middle"></div><div class="trailing">https://www.craft.do/s/XUSqE9unZVgfAx<br>Formatted with iA Presenter</div></div>
+      <div class="layout-default" style="width: 100%; font-size: 1rem;">
+        <div style=""><p>여러 줄에 걸쳐 작성하고 싶다면,</p>
+
+<ul>
+<li><code class="hljs kotlin"><span class="hljs-keyword">return</span></code> 지시자가 있는 줄에서 시작하도록 작성하거나, 혹은 괄호를 같은 줄에서 열면 됨</li>
+</ul>
+
+<pre><code class="javascript hljs"><span class="hljs-keyword">return</span> (
+  some +
+  result * f(a)
+  + f(b)
+  )
+</code></pre></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="variable-size-headings has-footnotes has-header light default-container present has-light-background fitted" data-background-color="#f6e4dd" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading">JavaScript –<br>function, its declaration, scope and call-backs</div><div class="middle"></div><div class="trailing">https://www.craft.do/s/XUSqE9unZVgfAx<br>Formatted with iA Presenter</div></div>
+      <div class="layout-default" style="width: 100%; font-size: 1rem;">
+        <div style=""><h3 id="7.자기설명적self-describing코드작성을위해">7. 자기 설명적<sup><a href="#fn1" id="fnr1" title="see footnote" class="footnote">1</a></sup> 코드 작성을 위해</h3>
+
+<ul>
+<li>함수는 간결하고, 한 가지 기능만 수행하도록 만들 것</li>
+<li>(길어진 함수를) 간결하게 쪼개어 쓰면, 테스트와 디버깅이 쉬워지며, 함수가 그 자체로 주석의 역할까지 수행하게 된다.</li>
+</ul></div>
+      </div>
+      <div class="footnotes">
+<ol>
+
+<li id="fn1">
+<p>self-describing <a href="#fnr1" title="return to article" class="reversefootnote">↩︎</a></p>
+</li>
+
+</ol>
+</div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="variable-size-headings has-footnotes has-header light default-container present has-light-background fitted" data-background-color="#f7e6df" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading">JavaScript –<br>function, its declaration, scope and call-backs</div><div class="middle"></div><div class="trailing">https://www.craft.do/s/XUSqE9unZVgfAx<br>Formatted with iA Presenter</div></div>
+      <div class="layout-default" style="width: 100%; font-size: 0.813rem;">
+        <div style=""><h4 id="예시n까지의소수primenumbers를구하는함수showprimesn–레이블을사용한반복문">(예시) n까지의 소수<sup><a href="#fn1" id="fnr1" title="see footnote" class="footnote">1</a></sup>를 구하는 함수 <code class="hljs stylus"><span class="hljs-function"><span class="hljs-title">showPrimes</span><span class="hljs-params">(n)</span></span></code> – 레이블을 사용한 반복문</h4>
+
+<pre><code class="javascript hljs"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">showPrimes</span>(<span class="hljs-params">n</span>) </span>{
+  <span class="hljs-attr">nextPrime</span>: <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">2</span>; i &lt; n; i++) {
+
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> j = <span class="hljs-number">2</span>; j &lt; i; j++) {
+      <span class="hljs-keyword">if</span> (i % j == <span class="hljs-number">0</span>) <span class="hljs-keyword">continue</span> nextPrime;
+    }
+    
+    alert(i);
+  }
+}
+</code></pre></div>
+      </div>
+      <div class="footnotes">
+<ol>
+
+<li id="fn1">
+<p>prime numbers <a href="#fnr1" title="return to article" class="reversefootnote">↩︎</a></p>
+</li>
+
+</ol>
+</div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="variable-size-headings has-header light default-container present fit-warning has-light-background fitted" data-background-color="#f6e7e2" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading">JavaScript –<br>function, its declaration, scope and call-backs</div><div class="middle"></div><div class="trailing">https://www.craft.do/s/XUSqE9unZVgfAx<br>Formatted with iA Presenter</div></div>
+      <div class="layout-default" style="width: 100%; font-size: 0.625rem;">
+        <div style=""><p>→ 소수인지 아닌지 여부를 검증하는 코드를 따로 분리해 별도의 함수 <code class="hljs stylus"><span class="hljs-function"><span class="hljs-title">isPrime</span><span class="hljs-params">(n)</span></span></code>에 넣어서 작성</p>
+
+<pre><code class="javascript hljs"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">showPrimes</span>(<span class="hljs-params">n</span>) </span>{
+
+  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">2</span>; i &lt; n; i++) {
+    <span class="hljs-keyword">if</span> (!isPrime(i)) <span class="hljs-keyword">continue</span>;
+    
+    alert(i);
+  }
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">isPrime</span>(<span class="hljs-params">n</span>) </span>{
+  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">2</span>; i &lt; n; i++) {
+    <span class="hljs-keyword">if</span> (n % i == <span class="hljs-number">0</span>) <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
+  }
+  <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;
+}
+</code></pre></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="variable-size-headings has-footnotes has-header light default-container present fit-warning has-light-background fitted" data-background-color="#f5e8e5" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading">JavaScript –<br>function, its declaration, scope and call-backs</div><div class="middle"></div><div class="trailing">https://www.craft.do/s/XUSqE9unZVgfAx<br>Formatted with iA Presenter</div></div>
+      <div class="layout-default" style="width: 100%; font-size: 0.485rem;">
+        <div style=""><h2 id="8.함수표현식">8. 함수 표현식</h2>
+
+<ul>
+<li>자바스크립트에서 함수는 값의 일종으로 취급됨</li>
+<li>함수를 선언하는 두 가지 방법: <strong>함수 선언문</strong> 방식과 <strong>함수 표현식</strong></li>
+</ul>
+
+<h3 id="함수선언functiondeclaration">함수 선언<sup><a href="#fn1" id="fnr1" title="see footnote" class="footnote">1</a></sup></h3>
+
+<pre><code class="javascript hljs"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">sayHi</span>(<span class="hljs-params"></span>) </span>{
+  alert( <span class="hljs-string">"Hello"</span> );
+}
+</code></pre>
+
+<h3 id="-함수표현식functionexpression">- 함수 표현식<sup><a href="#fn2" id="fnr2" title="see footnote" class="footnote">2</a></sup></h3>
+
+<pre><code class="javascript hljs"><span class="hljs-keyword">let</span> sayHi = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+  alert( <span class="hljs-string">"Hello"</span> );
+};
+</code></pre></div>
+      </div>
+      <div class="footnotes">
+<ol>
+
+<li id="fn1">
+<p>function declaration <a href="#fnr1" title="return to article" class="reversefootnote">↩︎</a></p>
+</li>
+
+<li id="fn2">
+<p>function expression <a href="#fnr2" title="return to article" class="reversefootnote">↩︎</a></p>
+</li>
+
+</ol>
+</div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="variable-size-headings has-header light default-container present has-light-background fitted" data-background-color="#f3e8e0" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading">JavaScript –<br>function, its declaration, scope and call-backs</div><div class="middle"></div><div class="trailing">https://www.craft.do/s/XUSqE9unZVgfAx<br>Formatted with iA Presenter</div></div>
+      <div class="layout-default" style="width: 100%; font-size: 0.859rem;">
+        <div style=""><ul>
+<li>함수가 만들어진 방식과 관계없이 함수는 값이고, 따라서 변수에 할당할 수 있음. 위 예시의 내용: “함수를 만들고 그 함수를 변수 <code class="hljs ebnf"><span class="hljs-attribute">sayHi</span></code>에 할당하기”</li>
+<li>함수는 값이기 때문에 <code class="hljs ebnf"><span class="hljs-attribute">alert</span></code>를 이용하여 함수 코드를 출력할 수 있음</li>
+</ul>
+
+<pre><code class="javascript hljs"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">sayHi</span>(<span class="hljs-params"></span>) </span>{
+  alert( <span class="hljs-string">"Hello"</span> );
+}
+
+alert( sayHi ); <span class="hljs-comment">// 함수 코드가 보임 (실행되지는 않음)</span>
+</code></pre></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="variable-size-headings has-header light v-split-container present has-light-background fitted" data-background-color="#f2e8dc" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading">JavaScript –<br>function, its declaration, scope and call-backs</div><div class="middle"></div><div class="trailing">https://www.craft.do/s/XUSqE9unZVgfAx<br>Formatted with iA Presenter</div></div>
+      <div class="layout-v-split" style="width: 100%; font-size: 0.813rem;">
+        <div style=""><h3 id="9.콜백함수">9. 콜백 함수</h3>
+
+<p>함수를 함수의 인수로 전달하고, 인수로 전달한 그 함수를 필요한 경우 “나중에 호출(call back)”하는 개념</p></div>
+        <div style=""><h4 id="예시함수askquestionyesno">(예시) 함수 <code class="hljs stylus"><span class="hljs-function"><span class="hljs-title">ask</span><span class="hljs-params">(question, yes, no)</span></span></code></h4>
+
+<ul>
+<li><code class="hljs ebnf"><span class="hljs-attribute">question</span></code> : 질문</li>
+<li><code class="hljs coffeescript"><span class="hljs-literal">yes</span></code> : “Yes”라고 답한 경우 실행되는 함수</li>
+<li><code class="hljs coffeescript"><span class="hljs-literal">no</span></code> : “No”라고 답한 경우 실행되는 함수</li>
+</ul>
+
+<h4 id="→3개의매개변수를갖는ask는question의내용을물은뒤답변에따라yes혹은no를호출하는함수">→ 3개의 매개변수를 갖는 <code class="hljs ebnf"><span class="hljs-attribute">ask</span></code>는 <code class="hljs ebnf"><span class="hljs-attribute">question</span></code>의 내용을 물은 뒤, 답변에 따라 <code class="hljs stylus"><span class="hljs-function"><span class="hljs-title">yes</span><span class="hljs-params">()</span></span></code> 혹은 <code class="hljs stylus"><span class="hljs-function"><span class="hljs-title">no</span><span class="hljs-params">()</span></span></code>를 호출하는 함수</h4></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+</section><section class="variable-size-headings has-header light default-container present fit-warning has-light-background fitted" data-background-color="#f1ead9" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading">JavaScript –<br>function, its declaration, scope and call-backs</div><div class="middle"></div><div class="trailing">https://www.craft.do/s/XUSqE9unZVgfAx<br>Formatted with iA Presenter</div></div>
+      <div class="layout-default" style="width: 100%; font-size: 0.672rem;">
+        <div style=""><pre><code class="javascript hljs"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">ask</span>(<span class="hljs-params">question, yes, no</span>) </span>{
+  <span class="hljs-keyword">if</span> (confirm(question)) yes()
+  <span class="hljs-keyword">else</span> no();
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">showOk</span>(<span class="hljs-params"></span>) </span>{
+  alert( <span class="hljs-string">"동의하셨습니다."</span> );
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">showCancel</span>(<span class="hljs-params"></span>) </span>{
+  alert( <span class="hljs-string">"취소 버튼을 누르셨습니다."</span> );
+}
+
+<span class="hljs-comment">// 사용법: 함수 showOkdhk showCancel이 ask 함수의 인수로 전달됨</span>
+ask(<span class="hljs-string">"동의하십니까?"</span>, showOk, showCancel);
+</code></pre>
+
+<ul>
+<li><code class="hljs ebnf"><span class="hljs-attribute">ask</span></code>의 인수 <code class="hljs ebnf"><span class="hljs-attribute">showOk</span></code>와 <code class="hljs ebnf"><span class="hljs-attribute">showCancel</span></code>: <em>콜백</em> 또는 <em>콜백 함수</em></li>
+</ul></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="variable-size-headings has-footnotes has-header light default-container present fit-warning has-light-background fitted" data-background-color="#f1edd8" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading">JavaScript –<br>function, its declaration, scope and call-backs</div><div class="middle"></div><div class="trailing">https://www.craft.do/s/XUSqE9unZVgfAx<br>Formatted with iA Presenter</div></div>
+      <div class="layout-default" style="width: 100%; font-size: 0.672rem;">
+        <div style=""><ul>
+<li>아래와 같이 줄일 수도 있음</li>
+</ul>
+
+<pre><code class="javascript hljs"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">ask</span>(<span class="hljs-params">question, yes, no</span>) </span>{
+  <span class="hljs-keyword">if</span> (confirm(question)) yes()
+  <span class="hljs-keyword">else</span> no();
+}
+
+ask(
+  <span class="hljs-string">"동의하십니까?"</span>,
+  <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{ alert(<span class="hljs-string">"동의하셨습니다."</span>); },
+  <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{ alert(<span class="hljs-string">"취소 버튼을 누르셨습니다."</span>); }
+);
+</code></pre>
+
+<ul>
+<li>이 경우, <code class="hljs gams"><span class="hljs-function"><span class="hljs-title">ask</span>(<span class="hljs-params">...</span>)</span></code> 안에서 선언된 함수들 : 익명 함수<sup><a href="#fn1" id="fnr1" title="see footnote" class="footnote">1</a></sup></li>
+</ul></div>
+      </div>
+      <div class="footnotes">
+<ol>
+
+<li id="fn1">
+<p>anonymous function <a href="#fnr1" title="return to article" class="reversefootnote">↩︎</a></p>
+</li>
+
+</ol>
+</div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="variable-size-headings has-footnotes has-header light v-split-container present fit-warning has-light-background fitted" data-background-color="#f1f0d8" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading">JavaScript –<br>function, its declaration, scope and call-backs</div><div class="middle"></div><div class="trailing">https://www.craft.do/s/XUSqE9unZVgfAx<br>Formatted with iA Presenter</div></div>
+      <div class="layout-v-split" style="width: 100%; font-size: 0.719rem;">
+        <div style=""><h3 id="10.함수표현식vs함수선언문">10. 함수 표현식 vs 함수 선언문</h3></div>
+        <div style=""><h4 id="1문법">1) 문법</h4>
+
+<ul>
+<li>함수 선언문 : 함수가 주요 코드 흐름 중간에 독자적인 구문 형태로 존재</li>
+</ul>
+
+<pre><code class="javascript hljs"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">sum</span>(<span class="hljs-params">a, b</span>) </span>{
+  <span class="hljs-keyword">return</span> a + b;
+}
+</code></pre>
+
+<ul>
+<li>함수 표현식 : 함수는 표현식이나 구문 구성<sup><a href="#fn1" id="fnr1" title="see footnote" class="footnote">1</a></sup> 내부에 생성됨</li>
+</ul>
+
+<pre><code class="javascript hljs"><span class="hljs-keyword">let</span> sum = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">a, b</span>) </span>{
+  <span class="hljs-keyword">return</span> a + b;
+};
+</code></pre></div>
+      </div>
+      <div class="footnotes">
+<ol>
+
+<li id="fn1">
+<p>syntax construct <a href="#fnr1" title="return to article" class="reversefootnote">↩︎</a></p>
+</li>
+
+</ol>
+</div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+</section><section class="variable-size-headings has-footnotes has-header light v-split-container present has-light-background fitted" data-background-color="#ecf0dd" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading">JavaScript –<br>function, its declaration, scope and call-backs</div><div class="middle"></div><div class="trailing">https://www.craft.do/s/XUSqE9unZVgfAx<br>Formatted with iA Presenter</div></div>
+      <div class="layout-v-split" style="width: 100%; font-size: 1rem;">
+        <div style=""><h4 id="2함수의생성시점">2) 함수의 생성 시점</h4>
+
+<ul>
+<li>함수 표현식 : 실제 실행 흐름이 해당 함수에 도달했을 때 함수가 생성됨</li>
+<li>함수 선언문 : 함수 선언문이 정의되기 전에도 호출할 수 있음<sup><a href="#fn1" id="fnr1" title="see footnote" class="footnote">1</a></sup></li>
+</ul></div>
+        <div style=""><h4 id="3스코프">3) 스코프</h4>
+
+<ul>
+<li>엄격모드<sup><a href="#fn2" id="fnr2" title="see footnote" class="footnote">2</a></sup>에서 함수 선언문이 코드 블록 내에 위치하면 해당 함수는 블록 내 어디서든 접근할 수 있음. 하지만 블록 밖에서는 함수에 접근하지 못함</li>
+<li>다음 페이지 예시 참조</li>
+</ul></div>
+      </div>
+      <div class="footnotes">
+<ol>
+
+<li id="fn1">
+<p>이것이 가능한 이유는 자바스크립트의 내부 알고리즘 때문. 자바스크립트 엔진은 스크립트를 실행하기 전, 준비단계에서 전역에 선언된 함수 선언문을 찾고, 해당 함수를 생성하게 되어 있음 <a href="#fnr1" title="return to article" class="reversefootnote">↩︎</a></p>
+</li>
+
+<li id="fn2">
+<p>strict mode <a href="#fnr2" title="return to article" class="reversefootnote">↩︎</a></p>
+</li>
+
+</ol>
+</div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+</section><section class="variable-size-headings has-header light default-container present fit-warning has-light-background fitted" data-background-color="#e8f0e2" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading">JavaScript –<br>function, its declaration, scope and call-backs</div><div class="middle"></div><div class="trailing">https://www.craft.do/s/XUSqE9unZVgfAx<br>Formatted with iA Presenter</div></div>
+      <div class="layout-default" style="width: 100%; font-size: 0.672rem;">
+        <div style=""><pre><code class="javascript hljs"><span class="hljs-keyword">let</span> age = <span class="hljs-number">16</span>;
+
+<span class="hljs-keyword">if</span> (age &lt; <span class="hljs-number">18</span>) {
+  welcome();  <span class="hljs-comment">// 정상 호출됨</span>
+
+  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">welcome</span>(<span class="hljs-params"></span>) </span>{
+    alert(<span class="hljs-string">"안녕!"</span>);
+  }
+
+  welcome();  <span class="hljs-comment">// 정상 호출됨</span>
+} <span class="hljs-keyword">else</span> {
+  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">welcome</span>(<span class="hljs-params"></span>) </span>{
+    alert(<span class="hljs-string">"안녕하세요!"</span>);
+  }
+}
+
+welcome(); <span class="hljs-comment">// Error: welcome is not defined</span>
+</code></pre></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="variable-size-headings has-header light default-container present fit-warning has-light-background fitted" data-background-color="#e5f0e6" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading">JavaScript –<br>function, its declaration, scope and call-backs</div><div class="middle"></div><div class="trailing">https://www.craft.do/s/XUSqE9unZVgfAx<br>Formatted with iA Presenter</div></div>
+      <div class="layout-default" style="width: 100%; font-size: 0.578rem;">
+        <div style=""><ul>
+<li><code class="hljs ebnf"><span class="hljs-attribute">if</span></code> 문 밖에서 <code class="hljs ebnf"><span class="hljs-attribute">welcome</span></code> 함수를 호출하는 방법: 함수 표현식을 사용</li>
+<li><code class="hljs ebnf"><span class="hljs-attribute">if</span></code> 문 밖에 선언한 변수 <code class="hljs ebnf"><span class="hljs-attribute">welcome</span></code>에 함수 표현식으로 만든 함수를 할당하면 됨</li>
+</ul>
+
+<pre><code class="javascript hljs"><span class="hljs-keyword">let</span> age prompt(<span class="hljs-string">"나이를 알려주세요."</span>, <span class="hljs-number">18</span>);
+
+<span class="hljs-keyword">let</span> welcome;
+
+<span class="hljs-keyword">if</span> (age &lt; <span class="hljs-number">18</span>) {
+
+  welcome = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+    alert(<span class="hljs-string">"안녕!"</span>);
+  };
+} <span class="hljs-keyword">else</span> {
+
+  welcome = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+    alert(<span class="hljs-string">"안녕하세요!"</span>);
+  };
+}
+
+welcome();  <span class="hljs-comment">// 정상 호출됨</span>
+</code></pre></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="variable-size-headings has-header light default-container present has-light-background fitted" data-background-color="#e3eee8" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading">JavaScript –<br>function, its declaration, scope and call-backs</div><div class="middle"></div><div class="trailing">https://www.craft.do/s/XUSqE9unZVgfAx<br>Formatted with iA Presenter</div></div>
+      <div class="layout-default" style="width: 100%; font-size: 1rem;">
+        <div style=""><ul>
+<li>물음표 연산자 <code class="hljs">?</code>를 사용해서 좀 더 단순화할 수 있음</li>
+</ul>
+
+<pre><code class="javascript hljs"><span class="hljs-keyword">let</span> age = prompt(<span class="hljs-string">"나이를 알려주세요."</span>, <span class="hljs-number">18</span>);
+
+<span class="hljs-keyword">let</span> welcome = (age &lt; <span class="hljs-number">18</span>) ?
+  <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{ alert(<span class="hljs-string">"안녕!"</span>); } :
+  <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{ alert(<span class="hljs-string">"안녕하세요!"</span>); };
+
+welcome();  <span class="hljs-comment">// 정상 호출됨</span>
+</code></pre></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section></div>
+    </div>
+    <script src="engine/index.js"></script>
+    <!--<script src="engine/d3v4.min.js" charset="utf-8"></script>
+    <script src="engine/charts.min.js" charset="utf-8"></script>
+    <script src="engine/billboard.min.js"></script>-->
+    <script src="engine/pptxgen.min.js"></script>
+                                                   <script src="engine/pfill.js"></script>
+    <script src="engine/published.js"></script>
+
+    <script>
+      Reveal.configure({
+        progress: true,
+        keyboard: true,
+        dependencies: [
+          {
+            src: "engine/highlight.js",
+            sync: true,
+            callback: function () {
+              hljs.initHighlightingOnLoad();
+            },
+          },
+        ],
+      });
+    </script>
+  </body>
+</html>
