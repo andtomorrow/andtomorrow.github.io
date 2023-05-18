@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base href="@@base@@" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="viewport-fit=cover, width=device-width, height=device-height, initial-scale=1" />
+    <link rel="stylesheet" href="engine/main.css" />
+    <link rel="stylesheet" href="theme/milano.css" />
+    <link rel="stylesheet" href="engine/katex/katex.min.css" />
+    <!--<link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />-->
+    <style>
+    :root{
+--logo: ;
+--darkaccent1color: ;
+--lightaccent1color: ;
+--accent2: #43aa8b;
+--accent3: #f9c74f;
+--accent4: #90be6d;
+--accent5: #f8961e;
+--accent6: #577590;
+--lighttitletextcolor: #fff;
+--darktitletextcolor: #fff;
+--lightbodytextcolor: #fff;
+--darkbodytextcolor: #fff;
+--lightbackgroundcolor: transparent;
+--darkbackgroundcolor: transparent;
+--bodyfont: spoqa han sans neo;
+--titlefont: pretendard;
+} 
+
+    </style>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="engine/print.css"
+      media="print"
+    />
+  </head>
+
+  <body class="responsive">
+    <div class="reveal">
+      <div class="slides"><section class="variable-size-headings has-footnotes has-header dark default-container present has-dark-background fitted" data-background-color="#bf3131" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading">[js] 기본 문법 요약</div><div class="middle"></div><div class="trailing">github.com/andtomorrow</div></div>
+      <div class="layout-default" style="width: 100%; font-size: 1rem;">
+        <div style=""><h2 id="javascriptfundamentals">JavaScript Fundamentals</h2>
+
+<h3 id="기본문법요약모던javascript튜토리얼https:ko.javascript.infojavascript-specials의내용을요약정리한것입니다.">기본 문법 요약 <sup><a href="#fn1" id="fnr1" title="see footnote" class="footnote">1</a></sup></h3></div>
+      </div>
+      <div class="footnotes">
+<ol>
+
+<li id="fn1">
+<p><a href="https://ko.javascript.info/javascript-specials">모던 JavaScript 튜토리얼</a>의 내용을 요약 정리한 것입니다. <a href="#fnr1" title="return to article" class="reversefootnote">↩︎</a></p>
+</li>
+
+</ol>
+</div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="variable-size-headings has-header dark has-background-image section-container present has-dark-background fitted" data-background-image="images/goran-ivos-idmvPhF8t4E-unsplash.jpg" data-state="background-filter-darken" data-background-color="#c63f2d" style="display: grid;" data-updated="true">
+
+      <div class="header"><div class="leading">[js] 기본 문법 요약</div><div class="middle"></div><div class="trailing">github.com/andtomorrow</div></div>
+      <div class="layout-section" style="width: 100%; font-size: 1rem;">
+        <div style="">
+          <h3 id="1.코드구조">1. 코드 구조</h3>
+        </div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+</section><section class="variable-size-headings has-footnotes has-header dark default-container present has-dark-background fitted" data-background-color="#ce4d29" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading">[js] 기본 문법 요약</div><div class="middle"></div><div class="trailing">github.com/andtomorrow</div></div>
+      <div class="layout-default" style="width: 100%; font-size: 1rem;">
+        <div style=""><p>여러 개의 구문은 세미콜론을 기준으로 구분할 수 있음</p>
+
+<pre><code class="javascript hljs">alert(<span class="hljs-string">'Hello'</span>); alert(<span class="hljs-string">'World);
+</span></code></pre>
+
+<p>줄바꿈도 여러 구문을 구분하는데 사용됨 (세미콜론 자동 삽입<sup><a href="#fn1" id="fnr1" title="see footnote" class="footnote">1</a></sup>)</p>
+
+<pre><code class="javascript hljs">alert(<span class="hljs-string">'Hello'</span>)
+alert(<span class="hljs-string">'World'</span>)
+</code></pre></div>
+      </div>
+      <div class="footnotes">
+<ol>
+
+<li id="fn1">
+<p>automatic semicolon insertion <a href="#fnr1" title="return to article" class="reversefootnote">↩︎</a></p>
+</li>
+
+</ol>
+</div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="variable-size-headings has-header dark default-container present has-dark-background fitted" data-background-color="#d55b25" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading">[js] 기본 문법 요약</div><div class="middle"></div><div class="trailing">github.com/andtomorrow</div></div>
+      <div class="layout-default" style="width: 100%; font-size: 1rem;">
+        <div style=""><p>세미콜론 자동 삽입: 아래와 같은 예외 경우들이 있으며</p>
+
+<pre><code class="javascript hljs">alert(<span class="hljs-string">"이 메시지가 출력된 후에 에러가 발생합니다."</span>)
+
+[<span class="hljs-number">1</span>, <span class="hljs-number">2</span>].forEach(alert)
+</code></pre>
+
+<p>코드 스타일 지침서 대부분은 세미콜론 붙이는 것을 권장함</p></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="variable-size-headings has-footnotes has-header dark default-container present fit-warning has-light-background fitted" data-background-color="#dd6921" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading">[js] 기본 문법 요약</div><div class="middle"></div><div class="trailing">github.com/andtomorrow</div></div>
+      <div class="layout-default" style="width: 100%; font-size: 0.766rem;">
+        <div style=""><h3 id="세미콜론이필수가아닌경우:">세미콜론이 필수가 아닌 경우:</h3>
+
+<ol>
+<li>코드블록 <code class="hljs nim"><span class="hljs-meta">{...}</span></code> 뒤</li>
+<li>반복문처럼 코드블록을 포함하는 구문구조<sup><a href="#fn1" id="fnr1" title="see footnote" class="footnote">1</a></sup></li>
+</ol>
+
+<pre><code class="javascript hljs"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">f</span>(<span class="hljs-params"></span>) </span>{...}
+<span class="hljs-comment">// 함수 선언문 끝에는 세미콜론이 필요 없음</span>
+
+<span class="hljs-keyword">for</span>(;;) {}
+<span class="hljs-comment">// 반복문 끝에는 세미콜론이 필요 없음</span>
+</code></pre>
+
+<p>’여분의’ 세미콜론을 입력하는 것은 오류와 무관함</p></div>
+      </div>
+      <div class="footnotes">
+<ol>
+
+<li id="fn1">
+<p>syntax construct <a href="#fnr1" title="return to article" class="reversefootnote">↩︎</a></p>
+</li>
+
+</ol>
+</div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="variable-size-headings has-footnotes has-header dark has-background-image default-container present has-light-background fitted" data-background-image="images/chris-lawton-5IHz5WhosQE-unsplash.jpg" data-background-color="#e5771e" style="display: grid;" data-updated="true">
+
+      <div class="header"><div class="leading">[js] 기본 문법 요약</div><div class="middle"></div><div class="trailing">github.com/andtomorrow</div></div>
+      <div class="layout-default" style="width: 100%; font-size: 1rem;">
+        <div style=""><h3 id="2.변수variables">2. 변수<sup><a href="#fn1" id="fnr1" title="see footnote" class="footnote">1</a></sup></h3></div>
+      </div>
+      <div class="footnotes">
+<ol>
+
+<li id="fn1">
+<p>variables <a href="#fnr1" title="return to article" class="reversefootnote">↩︎</a></p>
+</li>
+
+</ol>
+</div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="variable-size-headings has-header dark default-container present has-light-background fitted" data-background-color="#e87f1f" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading">[js] 기본 문법 요약</div><div class="middle"></div><div class="trailing">github.com/andtomorrow</div></div>
+      <div class="layout-default" style="width: 100%; font-size: 0.813rem;">
+        <div style=""><h3 id="변수를선언하는키워드">변수를 선언하는 키워드</h3>
+
+<ul>
+<li><code class="hljs bash"><span class="hljs-built_in">let</span></code></li>
+<li><code class="hljs actionscript"><span class="hljs-keyword">const</span></code> : 상수. 변경될 수 없음</li>
+<li><p><code class="hljs actionscript"><span class="hljs-keyword">var</span></code> (old-style)</p>
+자바스크립트에서 변수는 동적으로 자료형이 결정됨. 어떤 값이든 할당 받을 수 있다.</li>
+</ul>
+
+<pre><code class="javascript hljs"><span class="hljs-keyword">let</span> x = <span class="hljs-number">5</span>;
+x = <span class="hljs-string">"John"</span>;
+</code></pre></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="variable-size-headings has-header dark default-container present fit-warning has-light-background fitted" data-background-color="#eb8721" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading">[js] 기본 문법 요약</div><div class="middle"></div><div class="trailing">github.com/andtomorrow</div></div>
+      <div class="layout-default" style="width: 100%; font-size: 0.672rem;">
+        <div style=""><h3 id="여덟가지기본자료형">여덟 가지 기본 자료형</h3>
+
+<ul>
+<li><code class="hljs applescript"><span class="hljs-built_in">number</span></code> : 정수와 부동소수점을 저장</li>
+<li><code class="hljs ebnf"><span class="hljs-attribute">biging</span></code> : 아주 큰 숫자를 저장</li>
+<li><code class="hljs angelscript"><span class="hljs-built_in">string</span></code> : 문자열</li>
+<li><code class="hljs angelscript"><span class="hljs-built_in">bool</span>ean</code> : 논리값 <code class="hljs actionscript"><span class="hljs-literal">true</span></code> / <code class="hljs actionscript"><span class="hljs-literal">false</span></code></li>
+<li><code class="hljs 1c"><span class="hljs-literal">null</span></code> : “비어있음”,”존재하지 않음”을 뜻하는 <code class="hljs 1c"><span class="hljs-literal">null</span></code>을 유일한 값으로 함</li>
+<li><code class="hljs actionscript"><span class="hljs-literal">undefined</span></code> : 값이 “할당되지 않음”을 뜻하는 <code class="hljs actionscript"><span class="hljs-literal">undefined</span></code>를 유일한 값으로 함</li>
+<li><code class="hljs ceylon"><span class="hljs-keyword">object</span></code>, <code class="hljs ebnf"><span class="hljs-attribute">symbol</span></code> : <del>나중에..🥲</del></li>
+</ul></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="variable-size-headings has-header dark has-background-image section-container present has-light-background fitted" data-background-image="images/tirza-van-dijk-o1SKqmgSDbg-unsplash.jpg" data-state="background-filter-darken" data-background-color="#ee9023" style="display: grid;" data-updated="true">
+
+      <div class="header"><div class="leading">[js] 기본 문법 요약</div><div class="middle"></div><div class="trailing">github.com/andtomorrow</div></div>
+      <div class="layout-section" style="width: 100%; font-size: 1rem;">
+        <div style="">
+          <h3 id="3.상호작용">3. 상호작용</h3>
+        </div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+</section><section class="variable-size-headings has-header dark v-split-container present has-light-background fitted" data-background-color="#f19825" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading">[js] 기본 문법 요약</div><div class="middle"></div><div class="trailing">github.com/andtomorrow</div></div>
+      <div class="layout-v-split media-grid" style="width: 100%; font-size: 0.859rem;">
+        <div style=""><p>호스트 환경이 브라우저인 경우, UI 함수를 이용해 사용자와 상호작용할 수 있음</p>
+
+<h4 id="a.promptquestiondefault">a. <code class="hljs stylus"><span class="hljs-function"><span class="hljs-title">prompt</span><span class="hljs-params">(question, [default])</span></span></code></h4>
+
+<ul>
+<li>프롬프트 창에 매개변수로 받은 <code class="hljs ebnf"><span class="hljs-attribute">question</span></code>을 넣어 사용자에게 보여줌</li>
+<li>‘확인’: 사용자가 입력한 값 반환</li>
+<li>‘취소’: <code class="hljs 1c"><span class="hljs-literal">null</span></code> 반환</li>
+</ul></div>
+        <img src="images/Screenshot%202023-05-18%20at%202.00.35%20PM.png.public.png" class=" size-contain position-center-center" style="">
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+</section><section class="variable-size-headings has-header dark v-split-container present has-light-background fitted" data-background-color="#f4a127" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading">[js] 기본 문법 요약</div><div class="middle"></div><div class="trailing">github.com/andtomorrow</div></div>
+      <div class="layout-v-split media-grid" style="width: 100%; font-size: 1rem;">
+        <div style=""><h4 id="b.confirmquestion">b. <code class="hljs stylus"><span class="hljs-function"><span class="hljs-title">confirm</span><span class="hljs-params">(question)</span></span></code></h4>
+
+<ul>
+<li>컨펌 대화상자에 매개변수로 받은 <code class="hljs ebnf"><span class="hljs-attribute">question</span></code>을 넣어 사용자에게 보여줌</li>
+<li>‘확인’: <code class="hljs actionscript"><span class="hljs-literal">true</span></code> 반환</li>
+<li>‘취소’: <code class="hljs actionscript"><span class="hljs-literal">false</span></code> 반환</li>
+</ul></div>
+        <img src="images/Screenshot%202023-05-18%20at%201.51.40%20PM.png" class=" size-contain position-center-center" style="">
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+</section><section class="variable-size-headings has-header dark v-split-container present has-light-background fitted" data-background-color="#eda325" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading">[js] 기본 문법 요약</div><div class="middle"></div><div class="trailing">github.com/andtomorrow</div></div>
+      <div class="layout-v-split media-grid" style="width: 100%; font-size: 1rem;">
+        <div style=""><h4 id="c.alertmessage">c. <code class="hljs stylus"><span class="hljs-function"><span class="hljs-title">alert</span><span class="hljs-params">(message)</span></span></code></h4>
+
+<ul>
+<li><code class="hljs cmake"><span class="hljs-keyword">message</span></code>가 담긴 얼럿 창을 보여줌</li>
+</ul></div>
+        <img src="images/Screenshot%202023-05-18%20at%201.52.25%20PM.png" class=" size-contain position-center-center" style="">
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+</section><section class="variable-size-headings has-footnotes has-header dark v-split-container present has-light-background fitted" data-background-color="#e6a523" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading">[js] 기본 문법 요약</div><div class="middle"></div><div class="trailing">github.com/andtomorrow</div></div>
+      <div class="layout-v-split media-grid" style="width: 100%; font-size: 1rem;">
+        <div style=""><h3 id="4.연산자operators">4. 연산자<sup><a href="#fn1" id="fnr1" title="see footnote" class="footnote">1</a></sup></h3></div>
+        <img src="images/chris-liverani-rD2dc_2S3i0-unsplash.jpg" class=" position-center-center" style="">
+      </div>
+      <div class="footnotes">
+<ol>
+
+<li id="fn1">
+<p>Operators <a href="#fnr1" title="return to article" class="reversefootnote">↩︎</a></p>
+</li>
+
+</ol>
+</div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+</section><section class="variable-size-headings has-footnotes has-header dark default-container present has-light-background fitted" data-background-color="#dfa721" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading">[js] 기본 문법 요약</div><div class="middle"></div><div class="trailing">github.com/andtomorrow</div></div>
+      <div class="layout-default" style="width: 100%; font-size: 1rem;">
+        <div style=""><h4 id="a.산술arithmetical연산자">a. 산술<sup><a href="#fn1" id="fnr1" title="see footnote" class="footnote">1</a></sup> 연산자</h4>
+
+<ul>
+<li>사칙연산 <code class="hljs asciidoc"><span class="hljs-bullet">* </span>+ - /</code> <sup><a href="#fn2" id="fnr2" title="see footnote" class="footnote">2</a></sup></li>
+<li>나머지 연산자 <code class="hljs erlang-repl"><span class="hljs-comment">%</span></code></li>
+<li>거듭제곱 연산자 <code class="hljs gams"><span class="hljs-comment">**</span></code></li>
+</ul></div>
+      </div>
+      <div class="footnotes">
+<ol>
+
+<li id="fn1">
+<p>arithmetical <a href="#fnr1" title="return to article" class="reversefootnote">↩︎</a></p>
+</li>
+
+<li id="fn2">
+<p>이항 덧셈 연산자 <code class="hljs diff"><span class="hljs-addition">+</span></code>는 피연산자 중 하나가 문자열일 때 나머지 하나를 문자형으로 바꾸고 두 문자열을 연결함 <a href="#fnr2" title="return to article" class="reversefootnote">↩︎</a></p>
+</li>
+
+</ol>
+</div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="variable-size-headings has-footnotes has-header dark default-container present has-light-background fitted" data-background-color="#d8a91f" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading">[js] 기본 문법 요약</div><div class="middle"></div><div class="trailing">github.com/andtomorrow</div></div>
+      <div class="layout-default" style="width: 100%; font-size: 0.953rem;">
+        <div style=""><h4 id="b.할당assignments">b. 할당 <sup><a href="#fn1" id="fnr1" title="see footnote" class="footnote">1</a></sup></h4>
+
+<ul>
+<li><code class="hljs ini"><span class="hljs-attr">a</span> = b</code> : 할당 연산자</li>
+<li><code class="hljs apache"><span class="hljs-attribute">a</span> *= <span class="hljs-number">2</span></code> : 복합 할당 연산자</li>
+</ul>
+
+<h4 id="c.비트bitwise연산자">c. 비트<sup><a href="#fn2" id="fnr2" title="see footnote" class="footnote">2</a></sup> 연산자</h4>
+
+<ul>
+<li>인수를 32비트 정수로 변환하여 이진 연산을 수행함</li>
+</ul></div>
+      </div>
+      <div class="footnotes">
+<ol>
+
+<li id="fn1">
+<p>assignments <a href="#fnr1" title="return to article" class="reversefootnote">↩︎</a></p>
+</li>
+
+<li id="fn2">
+<p>bitwise <a href="#fnr2" title="return to article" class="reversefootnote">↩︎</a></p>
+</li>
+
+</ol>
+</div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="variable-size-headings has-footnotes has-header dark default-container present has-light-background fitted" data-background-color="#d2ab1e" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading">[js] 기본 문법 요약</div><div class="middle"></div><div class="trailing">github.com/andtomorrow</div></div>
+      <div class="layout-default" style="width: 100%; font-size: 0.953rem;">
+        <div style=""><h4 id="d.조건부conditional연산자">d. 조건부<sup><a href="#fn1" id="fnr1" title="see footnote" class="footnote">1</a></sup> 연산자</h4>
+
+<ul>
+<li>자바스크립트 연산자 중 유일하게 매개변수가 3개인 연산자</li>
+<li><code class="hljs ada">cond ? resultA : <span class="hljs-type">resultB</span></code>의 형태로 사용</li>
+<li><code class="hljs ebnf"><span class="hljs-attribute">cond</span></code>가 참이면 <code class="hljs ebnf"><span class="hljs-attribute">resultA</span></code>를, 아니면 <code class="hljs ebnf"><span class="hljs-attribute">resultB</span></code>를 반환함</li>
+</ul></div>
+      </div>
+      <div class="footnotes">
+<ol>
+
+<li id="fn1">
+<p>conditional <a href="#fnr1" title="return to article" class="reversefootnote">↩︎</a></p>
+</li>
+
+</ol>
+</div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="variable-size-headings has-footnotes has-header dark default-container present has-light-background fitted" data-background-color="#b99420" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading">[js] 기본 문법 요약</div><div class="middle"></div><div class="trailing">github.com/andtomorrow</div></div>
+      <div class="layout-default" style="width: 100%; font-size: 1rem;">
+        <div style=""><h4 id="e.논리logical연산자">e. 논리<sup><a href="#fn1" id="fnr1" title="see footnote" class="footnote">1</a></sup> 연산자</h4>
+
+<ul>
+<li>AND 연산자 <code class="hljs 1c"><span class="hljs-meta">&amp;&amp;</span></code>와 OR 연산자 <code class="hljs 1c"><span class="hljs-string">||</span></code>은 논리값을 확인하고, 그 평가가 멈췄던 곳으로 값을 반환함 (반드시 <code class="hljs actionscript"><span class="hljs-literal">true</span></code>나 <code class="hljs actionscript"><span class="hljs-literal">false</span></code> 중 하나일 필요는 없음)</li>
+<li>NOT 연산자 <code class="hljs diff"><span class="hljs-addition">!</span></code>는 피연산자의 자료형을 불린형으로 바꾼 후 그 역을 반환함</li>
+</ul></div>
+      </div>
+      <div class="footnotes">
+<ol>
+
+<li id="fn1">
+<p>logical <a href="#fnr1" title="return to article" class="reversefootnote">↩︎</a></p>
+</li>
+
+</ol>
+</div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="variable-size-headings has-footnotes has-header dark v-split-container present has-dark-background fitted" data-background-color="#a27f23" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading">[js] 기본 문법 요약</div><div class="middle"></div><div class="trailing">github.com/andtomorrow</div></div>
+      <div class="layout-v-split media-grid" style="width: 100%; font-size: 0.953rem;">
+        <div style=""><h4 id="f.비교연산자comparisons">f. 비교 연산자 <sup><a href="#fn1" id="fnr1" title="see footnote" class="footnote">1</a></sup></h4>
+
+<ul>
+<li>동등 연산자 <sup><a href="#fn2" id="fnr2" title="see footnote" class="footnote">2</a></sup> <code class="hljs haml">=<span class="ruby">=</span></code>는 형이 다른 값끼리 비교할 때 피연산자의 자료형을 숫자형으로 바꾼 후 비교를 진행함</li>
+</ul>
+
+<pre><code class="javascript hljs">alert( <span class="hljs-number">0</span> == <span class="hljs-literal">false</span> ); <span class="hljs-comment">// true</span>
+alert( <span class="hljs-number">0</span> == <span class="hljs-string">''</span> ); <span class="hljs-comment">// true</span>
+</code></pre></div>
+        <div style=""><ul>
+<li><p>단, <code class="hljs 1c"><span class="hljs-literal">null</span></code>과 <code class="hljs actionscript"><span class="hljs-literal">undefined</span></code>의 경우는 제외. 이 자료형들은 서로 동등하지만(equal), 그 외의 어떤 자료형과도 동등하지 않음</p>
+<img src="images/Screenshot%202023-05-18%20at%202.38.47%20PM.png.public.png" class=" size-contain position-center-center"></li>
+</ul></div>
+      </div>
+      <div class="footnotes">
+<ol>
+
+<li id="fn1">
+<p>comparisons <a href="#fnr1" title="return to article" class="reversefootnote">↩︎</a></p>
+</li>
+
+<li id="fn2">
+<p>equality check <a href="#fnr2" title="return to article" class="reversefootnote">↩︎</a></p>
+</li>
+
+</ol>
+</div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+</section><section class="variable-size-headings has-footnotes has-header dark default-container present has-dark-background fitted" data-background-color="#8a6925" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading">[js] 기본 문법 요약</div><div class="middle"></div><div class="trailing">github.com/andtomorrow</div></div>
+      <div class="layout-default" style="width: 100%; font-size: 0.906rem;">
+        <div style=""><ul>
+<li>기타 비교 연산자들 <code class="hljs bnf"><span class="hljs-attribute">&lt; &gt;</span> <span class="hljs-attribute">&lt;= &gt;</span>=</code> 역시 피연산자의 자료형을 숫자형으로 바꾼 후 비교를 진행함</li>
+<li>일치 연산자 <sup><a href="#fn1" id="fnr1" title="see footnote" class="footnote">1</a></sup> <code class="hljs diff"><span class="hljs-comment">===</span></code>는 피연산자의 형을 변환하지 않음. 자료형의 불일치는 곧 값의 불일치임</li>
+<li>대소 비교 연산자의 피연산자가 문자열일 경우, 글자 단위로 크기 비교가 이루어짐. 다른 타입의 값이 들어오면 숫자형으로 형 변환 후 비교 진행</li>
+</ul></div>
+      </div>
+      <div class="footnotes">
+<ol>
+
+<li id="fn1">
+<p>strict equality operator <a href="#fnr1" title="return to article" class="reversefootnote">↩︎</a></p>
+</li>
+
+</ol>
+</div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="variable-size-headings has-footnotes has-header dark default-container present has-dark-background fitted" data-background-color="#725328" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading">[js] 기본 문법 요약</div><div class="middle"></div><div class="trailing">github.com/andtomorrow</div></div>
+      <div class="layout-default" style="width: 100%; font-size: 1rem;">
+        <div style=""><h4 id="g.nul..기타연산자">g. <del>nul..</del> 기타 연산자</h4>
+
+<ul>
+<li>nullish 병합 <sup><a href="#fn1" id="fnr1" title="see footnote" class="footnote">1</a></sup> 연산자, 쉼표 연산자 등</li>
+</ul></div>
+      </div>
+      <div class="footnotes">
+<ol>
+
+<li id="fn1">
+<p>nullish coalescing <a href="#fnr1" title="return to article" class="reversefootnote">↩︎</a></p>
+</li>
+
+</ol>
+</div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="variable-size-headings has-header dark v-split-container present has-dark-background fitted" data-background-color="#5a3d2b" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading">[js] 기본 문법 요약</div><div class="middle"></div><div class="trailing">github.com/andtomorrow</div></div>
+      <div class="layout-v-split media-grid" style="width: 100%; font-size: 1rem;">
+        <div style=""><h3 id="5.반복문">5. 반복문</h3></div>
+        <img src="images/erol-ahmed-wKTF65TcReY-unsplash.jpg" class=" position-center-center" style="">
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+</section><section class="variable-size-headings has-header dark default-container present has-dark-background fitted" data-background-color="#5f5845" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading">[js] 기본 문법 요약</div><div class="middle"></div><div class="trailing">github.com/andtomorrow</div></div>
+      <div class="layout-default" style="width: 100%; font-size: 1rem;">
+        <div style=""><pre><code class="javascript hljs"><span class="hljs-keyword">while</span> (condition) {
+  ...
+}
+</code></pre>
+
+<pre><code class="javascript hljs"><span class="hljs-keyword">do</span> {
+  ...
+} <span class="hljs-keyword">while</span> (condition);
+</code></pre>
+
+<pre><code class="javascript hljs"><span class="hljs-keyword">for</span>(<span class="hljs-keyword">let</span> i=<span class="hljs-number">0</span>; i&lt;<span class="hljs-number">10</span>; i++) {
+  ...
+}
+</code></pre></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="variable-size-headings has-footnotes has-header dark default-container present has-dark-background fitted" data-background-color="#64745f" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading">[js] 기본 문법 요약</div><div class="middle"></div><div class="trailing">github.com/andtomorrow</div></div>
+      <div class="layout-default" style="width: 100%; font-size: 0.953rem;">
+        <div style=""><ul>
+<li><code class="hljs gams"><span class="hljs-function"><span class="hljs-title">for</span>(<span class="hljs-params">let...</span>)</span></code> 안쪽에 선언한 변수는 오직 반복문 내에서만 사용할 수 있음</li>
+<li><code class="hljs bash"><span class="hljs-built_in">let</span></code>을 생략하고 기존에 선언되어 있는 변수를 사용하는 것도 가능함</li>
+<li>지시자<sup><a href="#fn1" id="fnr1" title="see footnote" class="footnote">1</a></sup> <code class="hljs kotlin"><span class="hljs-keyword">break</span></code>나 <code class="hljs kotlin"><span class="hljs-keyword">continue</span></code>는 반복문 전체나 현재 실행 중인 반복을 빠져나가는 데 사용됨 (cf. label : 중첩 반복문을 빠져나갈 때 사용함)</li>
+</ul></div>
+      </div>
+      <div class="footnotes">
+<ol>
+
+<li id="fn1">
+<p>directive <a href="#fnr1" title="return to article" class="reversefootnote">↩︎</a></p>
+</li>
+
+</ol>
+</div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="variable-size-headings has-footnotes has-header dark default-container present fit-warning has-light-background fitted" data-background-color="#6a9079" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading">[js] 기본 문법 요약</div><div class="middle"></div><div class="trailing">github.com/andtomorrow</div></div>
+      <div class="layout-default" style="width: 100%; font-size: 0.531rem;">
+        <div style=""><h3 id="6.‘switch’문">6. ‘switch’ 문</h3>
+
+<ul>
+<li>‘switch’문은 여러 개의 <code class="hljs ebnf"><span class="hljs-attribute">if</span></code> 문을 대신할 수 있음</li>
+<li>값 비교에 일치 연산자<sup><a href="#fn1" id="fnr1" title="see footnote" class="footnote">1</a></sup> <code class="hljs diff"><span class="hljs-comment">===</span></code>를 사용함</li>
+</ul>
+
+<pre><code class="javascript hljs"><span class="hljs-keyword">let</span> age = prompt(<span class="hljs-string">'Your age?'</span>, <span class="hljs-number">18</span>);
+
+<span class="hljs-keyword">switch</span> (age) {
+  <span class="hljs-keyword">case</span> <span class="hljs-number">18</span>:
+    alert(<span class="hljs-string">"Won't work"</span>); <span class="hljs-comment">// 주의. prompt 함수는 항상 숫자가 아닌 문자열을 반환함</span>
+    <span class="hljs-keyword">break</span>;
+
+  <span class="hljs-keyword">case</span> <span class="hljs-string">"18"</span>:
+    alert(<span class="hljs-string">"This works!"</span>);
+    <span class="hljs-keyword">break</span>;
+
+  <span class="hljs-keyword">default</span>:
+    alert(<span class="hljs-string">"Any value not equal to one above"</span>);
+}
+</code></pre></div>
+      </div>
+      <div class="footnotes">
+<ol>
+
+<li id="fn1">
+<p>strict equality <a href="#fnr1" title="return to article" class="reversefootnote">↩︎</a></p>
+</li>
+
+</ol>
+</div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="variable-size-headings has-header dark v-split-container present has-light-background fitted" data-background-color="#6fac93" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading">[js] 기본 문법 요약</div><div class="middle"></div><div class="trailing">github.com/andtomorrow</div></div>
+      <div class="layout-v-split media-grid" style="width: 100%; font-size: 1rem;">
+        <div style=""><h3 id="7.함수">7. 함수</h3></div>
+        <img src="images/alex-gruber-U8qutF7SED4-unsplash.jpg" class=" position-right-center" style="">
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+</section><section class="variable-size-headings has-header dark default-container present has-light-background fitted" data-background-color="#75c8ae" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading">[js] 기본 문법 요약</div><div class="middle"></div><div class="trailing">github.com/andtomorrow</div></div>
+      <div class="layout-default" style="width: 100%; font-size: 1rem;">
+        <div style=""><h4 id="a.함수선언">a. 함수 선언</h4>
+
+<ul>
+<li>주요 코드 흐름을 차지하는 방식</li>
+</ul>
+
+<pre><code class="javascript hljs"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">sum</span>(<span class="hljs-params">a, b</span>) </span>{
+  <span class="hljs-keyword">let</span> result = a + b;
+
+  <span class="hljs-keyword">return</span> result;
+}
+</code></pre></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="variable-size-headings has-header dark default-container present has-light-background fitted" data-background-color="#75c5b6" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading">[js] 기본 문법 요약</div><div class="middle"></div><div class="trailing">github.com/andtomorrow</div></div>
+      <div class="layout-default" style="width: 100%; font-size: 1rem;">
+        <div style=""><h4 id="b.함수표현식">b. 함수 표현식</h4>
+
+<ul>
+<li>표현식 형태로 선언된 함수</li>
+</ul>
+
+<pre><code class="javascript hljs"><span class="hljs-keyword">let</span> sum = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">a, b</span>) </span>{
+  <span class="hljs-keyword">let</span> result = a + b;
+
+  <span class="hljs-keyword">return</span> result;
+};
+</code></pre></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="variable-size-headings has-header dark default-container present has-light-background fitted" data-background-color="#76c3bf" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading">[js] 기본 문법 요약</div><div class="middle"></div><div class="trailing">github.com/andtomorrow</div></div>
+      <div class="layout-default" style="width: 100%; font-size: 0.859rem;">
+        <div style=""><h4 id="c.화살표함수">c. 화살표 함수</h4>
+
+<pre><code class="javascript hljs"><span class="hljs-keyword">let</span> sum = <span class="hljs-function">(<span class="hljs-params">a, b</span>) =&gt;</span> a + b;
+
+<span class="hljs-keyword">let</span> sum = <span class="hljs-function">(<span class="hljs-params">a, b</span>) =&gt;</span> {
+  <span class="hljs-comment">// ...</span>
+  <span class="hljs-keyword">return</span> a + b;
+}
+
+<span class="hljs-comment">// 인수가 없는 경우</span>
+<span class="hljs-keyword">let</span> sayHi = <span class="hljs-function">() =&gt;</span> alert(<span class="hljs-string">"Hello"</span>);
+
+<span class="hljs-comment">// 인수가 하나인 경우</span>
+<span class="hljs-keyword">let</span> double = <span class="hljs-function"><span class="hljs-params">n</span> =&gt;</span> n * <span class="hljs-number">2</span>;
+</code></pre></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="variable-size-headings has-footnotes has-header dark default-container present has-light-background fitted" data-background-color="#77c0c7" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading">[js] 기본 문법 요약</div><div class="middle"></div><div class="trailing">github.com/andtomorrow</div></div>
+      <div class="layout-default" style="width: 100%; font-size: 1rem;">
+        <div style=""><ul>
+<li>함수는 지역 변수를 가질 수 있음 <sup><a href="#fn1" id="fnr1" title="see footnote" class="footnote">1</a></sup></li>
+<li>매개변수에 기본값을 설정할 수 있음</li>
+<li>함수는 항상 무언가를 반환함. <code class="hljs kotlin"><span class="hljs-keyword">return</span></code> 문이 없는 경우는 <code class="hljs actionscript"><span class="hljs-literal">undefined</span></code>를 반환함</li>
+</ul></div>
+      </div>
+      <div class="footnotes">
+<ol>
+
+<li id="fn1">
+<p>지역 변수는 함수 본문에 선언된 변수로, 함수 내부에서만 접근 가능 <a href="#fnr1" title="return to article" class="reversefootnote">↩︎</a></p>
+</li>
+
+</ol>
+</div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="variable-size-headings has-header dark title-container present has-light-background fitted" data-background-color="#78bed0" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading">[js] 기본 문법 요약</div><div class="middle"></div><div class="trailing">github.com/andtomorrow</div></div>
+      <div class="layout-title" style="width: 100%; font-size: 1rem;">
+        <div style=""><h2 id="moretocome😇">more to come 😇</h2>
+
+<p><del>we’ve studied only basics</del></p></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section></div>
+    </div>
+    <script src="engine/index.js"></script>
+    <!--<script src="engine/d3v4.min.js" charset="utf-8"></script>
+    <script src="engine/charts.min.js" charset="utf-8"></script>
+    <script src="engine/billboard.min.js"></script>-->
+    <script src="engine/pptxgen.min.js"></script>
+                                                   <script src="engine/pfill.js"></script>
+    <script src="engine/published.js"></script>
+
+    <script>
+      Reveal.configure({
+        progress: true,
+        keyboard: true,
+        dependencies: [
+          {
+            src: "engine/highlight.js",
+            sync: true,
+            callback: function () {
+              hljs.initHighlightingOnLoad();
+            },
+          },
+        ],
+      });
+    </script>
+  </body>
+</html>
