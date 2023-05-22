@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base href="@@base@@" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="viewport-fit=cover, width=device-width, height=device-height, initial-scale=1" />
+    <link rel="stylesheet" href="engine/main.css" />
+    <link rel="stylesheet" href="theme/copenhagen.css" />
+    <link rel="stylesheet" href="engine/katex/katex.min.css" />
+    <!--<link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />-->
+    <style>
+    :root{
+--logo: ;
+--darkaccent1color: #E1EBE3;
+--lightaccent1color: #6E9075;
+--accent2: #43aa8b;
+--accent3: #f9c74f;
+--accent4: #90be6d;
+--accent5: #f8961e;
+--accent6: #577590;
+--lighttitletextcolor: #ffffffe6;
+--darktitletextcolor: #000000b3;
+--lightbodytextcolor: #ffffffe6;
+--darkbodytextcolor: #000000b3;
+--lightbackgroundcolor: transparent;
+--darkbackgroundcolor: transparent;
+--bodyfont: spoqa han sans neo;
+--titlefont: spoqa han sans neo;
+} 
+
+    </style>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="engine/print.css"
+      media="print"
+    />
+  </head>
+
+  <body class="responsive">
+    <div class="reveal">
+      <div class="slides"><section class="variable-size-headings has-header light default-container present has-light-background fitted" data-background-color="#d3e9d8" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading">[js] 기본 문법 요약</div><div class="middle"></div><div class="trailing">github.com/andtomorrow</div></div>
+      <div class="layout-default media-grid" style="width: 100%; font-size: 1rem;">
+        <div style=""><h3 id="화살표함수기본">화살표 함수 기본</h3>
+
+<div class="single-image-wrapper"><img src="images/martin-reisch-EI32DgwN450-unsplash.jpg" class=" position-center-center"></div></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="variable-size-headings has-header light default-container present has-light-background fitted" data-background-color="#cde1d7" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading">[js] 기본 문법 요약</div><div class="middle"></div><div class="trailing">github.com/andtomorrow</div></div>
+      <div class="layout-default" style="width: 100%; font-size: 0.859rem;">
+        <div style=""><pre><code class="javascript hljs"><span class="hljs-keyword">let</span> func = <span class="hljs-function">(<span class="hljs-params">arg1, arg2, ...argN</span>) =&gt;</span> expression
+</code></pre>
+
+<ul>
+<li>인자 <code class="hljs gams"><span class="hljs-function"><span class="hljs-title">arg1</span></span>..argN</code>을 받는 함수 <code class="hljs swift"><span class="hljs-function"><span class="hljs-keyword">func</span></span></code>이 만들어짐</li>
+<li>함수 <code class="hljs swift"><span class="hljs-function"><span class="hljs-keyword">func</span></span></code>은 화살표(<code class="hljs excel">=&gt;</code>) 우측의 표현식(expression)을 평가하고, 평가 결과를 반환함</li>
+<li>아래의 동일한 함수를 축약한 것</li>
+</ul>
+
+<pre><code class="javascript hljs"><span class="hljs-keyword">let</span> func = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">arg1, arg2, ...argN</span>) </span>{
+  <span class="hljs-keyword">return</span> expression;
+};
+</code></pre></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="variable-size-headings has-header light default-container present has-light-background fitted" data-background-color="#c9dad7" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading">[js] 기본 문법 요약</div><div class="middle"></div><div class="trailing">github.com/andtomorrow</div></div>
+      <div class="layout-default" style="width: 100%; font-size: 1rem;">
+        <div style=""><p>좀 더 구체적인 예시</p>
+
+<pre><code class="javascript hljs"><span class="hljs-keyword">let</span> sum = <span class="hljs-function">(<span class="hljs-params">a, b</span>) =&gt;</span> a + b;
+
+<span class="hljs-comment">/* 축약하지 않았을 때의 함수 표현을 떠올려 보자.
+let sum = _____(a, b) {
+  _____ a + b;
+};
+*/</span> 
+
+alert( sum(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>) ); <span class="hljs-comment">// 3</span>
+</code></pre></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="variable-size-headings has-header light default-container present has-light-background fitted" data-background-color="#ced8dc" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading">[js] 기본 문법 요약</div><div class="middle"></div><div class="trailing">github.com/andtomorrow</div></div>
+      <div class="layout-default" style="width: 100%; font-size: 1rem;">
+        <div style=""><p><strong>하나의 인수</strong>만을 갖는 경우, 괄호 생략하여 코드 길이를 더 줄일 수 있음</p>
+
+<pre><code class="javascript hljs"><span class="hljs-keyword">let</span> double = <span class="hljs-function"><span class="hljs-params">n</span> =&gt;</span> n * <span class="hljs-number">2</span>;
+<span class="hljs-comment">// let double = function(n) { return n * 2}과 거의 동일함</span>
+
+alert( double(<span class="hljs-number">3</span>) ); <span class="hljs-comment">// 6</span>
+</code></pre></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="variable-size-headings has-header light default-container present has-light-background fitted" data-background-color="#d3d6df" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading">[js] 기본 문법 요약</div><div class="middle"></div><div class="trailing">github.com/andtomorrow</div></div>
+      <div class="layout-default" style="width: 100%; font-size: 1rem;">
+        <div style=""><p>인수가 하나도 없을 땐 <strong>괄호를 비워놓으면 되며</strong>, 이 때 괄호는 생략할 수 없음</p>
+
+<pre><code class="javascript hljs"><span class="hljs-keyword">let</span> sayHi = <span class="hljs-function">() =&gt;</span> alert(<span class="hljs-string">"안녕하세요!"</span>);
+
+sayHi();
+</code></pre></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="variable-size-headings has-header light default-container present has-light-background fitted" data-background-color="#dbd4e1" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading">[js] 기본 문법 요약</div><div class="middle"></div><div class="trailing">github.com/andtomorrow</div></div>
+      <div class="layout-default" style="width: 100%; font-size: 0.859rem;">
+        <div style=""><ul>
+<li>화살표 함수는 일반 함수 표현식과 동일한 방식으로 사용할 수 있음</li>
+<li><mark>물음표 연산자를 이용하여 아래처럼 정의</mark>하는 것도 가능함</li>
+</ul>
+
+<pre><code class="javascript hljs"><span class="hljs-keyword">let</span> age = prompt(<span class="hljs-string">"나이를 알려주세요."</span>, <span class="hljs-number">18</span>);
+
+<span class="hljs-keyword">let</span> welcome = (age &lt; <span class="hljs-number">18</span>) ?
+  <span class="hljs-function">() =&gt;</span> alert(<span class="hljs-string">'안녕'</span>) :
+  <span class="hljs-function">() =&gt;</span> alert(<span class="hljs-string">"안녕하세요!"</span>);
+
+welcome();
+</code></pre></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="variable-size-headings has-footnotes has-header light v-split-container present has-light-background fitted" data-background-color="#e1d6e3" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading">[js] 기본 문법 요약</div><div class="middle"></div><div class="trailing">github.com/andtomorrow</div></div>
+      <div class="layout-v-split media-grid" style="width: 100%; font-size: 0.859rem;">
+        <div style=""><h3 id="본문이여러줄인화살표함수">본문이 여러 줄인 화살표 함수</h3>
+
+<p>위에서 다룬 것보다 많은 표현식<sup><a href="#fn1" id="fnr1" title="see footnote" class="footnote">1</a></sup>과 구문<sup><a href="#fn2" id="fnr2" title="see footnote" class="footnote">2</a></sup>을 포함하는, 더 복합적인 함수의 경우</p>
+
+<p>→ 중괄호<sup><a href="#fn3" id="fnr3" title="see footnote" class="footnote">3</a></sup> 안에 넣는 방식을 택함. 이 경우에는 <code class="hljs kotlin"><span class="hljs-keyword">return</span></code> 지시자를 사용해 명시적으로 결괏값을 반환해야 함</p></div>
+        <img src="images/charlesdeluvio-OWkXt1ikC5g-unsplash.jpg" class=" position-center-center" style="">
+      </div>
+      <div class="footnotes">
+<ol>
+
+<li id="fn1">
+<p>expressions <a href="#fnr1" title="return to article" class="reversefootnote">↩︎</a></p>
+</li>
+
+<li id="fn2">
+<p>statements <a href="#fnr2" title="return to article" class="reversefootnote">↩︎</a></p>
+</li>
+
+<li id="fn3">
+<p>curly braces <a href="#fnr3" title="return to article" class="reversefootnote">↩︎</a></p>
+</li>
+
+</ol>
+</div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+</section><section class="variable-size-headings has-header light default-container present has-light-background fitted" data-background-color="#e5dbe3" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading">[js] 기본 문법 요약</div><div class="middle"></div><div class="trailing">github.com/andtomorrow</div></div>
+      <div class="layout-default" style="width: 100%; font-size: 1rem;">
+        <div style=""><p>예시</p>
+
+<pre><code class="javascript hljs"><span class="hljs-keyword">let</span> sum = <span class="hljs-function">(<span class="hljs-params">a, b</span>) =&gt;</span> {
+  <span class="hljs-keyword">let</span> result = a + b;
+  <span class="hljs-keyword">return</span> result;
+};
+
+alert( sum(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>) ); <span class="hljs-comment">// 3</span>
+</code></pre></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="variable-size-headings has-header light default-container present has-light-background fitted" data-background-color="#e7dce1" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading">[js] 기본 문법 요약</div><div class="middle"></div><div class="trailing">github.com/andtomorrow</div></div>
+      <div class="layout-default" style="width: 100%; font-size: 0.906rem;">
+        <div style=""><p><strong>(실습)</strong> 함수 표현식으로 만든 아래 함수를 화살표 함수로 바꿔보세요.</p>
+
+<pre><code class="javascript hljs"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">ask</span>(<span class="hljs-params">question, yes, no</span>) </span>{
+  <span class="hljs-keyword">if</span> (confirm(question)) yes()
+  <span class="hljs-keyword">else</span> no();
+}
+
+ask(
+  <span class="hljs-string">"동의하십니까?"</span>,
+  <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{ alert(<span class="hljs-string">"동의하셨습니다."</span>); },
+  <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{ alert(<span class="hljs-string">"취소 버튼을 누르셨습니다."</span>); }
+);
+</code></pre></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="variable-size-headings has-header light v-split-container present has-light-background fitted" data-background-color="#e7dcdc" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading">[js] 기본 문법 요약</div><div class="middle"></div><div class="trailing">github.com/andtomorrow</div></div>
+      <div class="layout-v-split media-grid" style="width: 100%; font-size: 1rem;">
+        <img src="images/karla-hernandez-LrlyZzX6Sws-unsplash.jpg" class=" position-center-center" style="">
+        <div style=""><pre><code class="javascript hljs"><span class="hljs-keyword">let</span> nextPage = confirm(<span class="hljs-string">"문제를 풀었으면 해답을 확인하세요."</span>) ?
+  <span class="hljs-function">() =&gt;</span> alert(<span class="hljs-string">"동의하셨습니다."</span>) :
+  <span class="hljs-function">() =&gt;</span> alert(<span class="hljs-string">"취소 버튼을 누르셨습니다."</span>);
+</code></pre></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+</section><section class="variable-size-headings has-header light default-container present has-light-background fitted" data-background-color="#e8dfdc" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading">[js] 기본 문법 요약</div><div class="middle"></div><div class="trailing">github.com/andtomorrow</div></div>
+      <div class="layout-default" style="width: 100%; font-size: 1rem;">
+        <div style=""><p>해답</p>
+
+<pre><code class="javascript hljs"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">ask</span>(<span class="hljs-params">question, yes, no</span>) </span>{
+  <span class="hljs-keyword">if</span> (confirm(question)) yes()
+  <span class="hljs-keyword">else</span> no();
+}
+
+ask(
+  <span class="hljs-string">"동의하십니까?"</span>,
+  <span class="hljs-function">() =&gt;</span> alert(<span class="hljs-string">"동의하셨습니다."</span>),
+  <span class="hljs-function">() =&gt;</span> alert(<span class="hljs-string">"취소 버튼을 누르셨습니다."</span>)
+);
+</code></pre></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section></div>
+    </div>
+    <script src="engine/index.js"></script>
+    <!--<script src="engine/d3v4.min.js" charset="utf-8"></script>
+    <script src="engine/charts.min.js" charset="utf-8"></script>
+    <script src="engine/billboard.min.js"></script>-->
+    <script src="engine/pptxgen.min.js"></script>
+                                                   <script src="engine/pfill.js"></script>
+    <script src="engine/published.js"></script>
+
+    <script>
+      Reveal.configure({
+        progress: true,
+        keyboard: true,
+        dependencies: [
+          {
+            src: "engine/highlight.js",
+            sync: true,
+            callback: function () {
+              hljs.initHighlightingOnLoad();
+            },
+          },
+        ],
+      });
+    </script>
+  </body>
+</html>
